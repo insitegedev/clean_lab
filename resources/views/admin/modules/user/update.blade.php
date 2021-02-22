@@ -7,7 +7,7 @@
             <div class="col-lg-6">
                 <div class="element-wrapper">
                     <h6 class="element-header">
-                        @lang('admin.update_user')
+                        @lang('admin.user.update')
                     </h6>
                     <div class="element-box">
                         <div class="row">

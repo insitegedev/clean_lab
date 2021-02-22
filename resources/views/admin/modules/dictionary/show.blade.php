@@ -9,13 +9,13 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>@lang('language.key')</th>
+                                <th>@lang('admin.languages.key')</th>
                                 <td>
                                     {{$language->key}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>@lang('language.module')</th>
+                                <th>@lang('admin.languages.module')</th>
                                 <td>{{$language->module}}</td>
                             </tr>
                             @foreach ($langs as $lang)
@@ -24,7 +24,7 @@
                                 <td>{{$language->language()->where('language_id', $lang->id)->first()->value ?? ''}}</td>
                             </tr>
                             @endforeach
-                           
+
                             </tbody>
                         </table>
                     </div>

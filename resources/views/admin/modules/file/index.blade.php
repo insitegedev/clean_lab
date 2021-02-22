@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex my-3 items-center justify-between">
     <a href="{{route('FileCreate', $locale)}}" class="font-bold text-xs bg-green-400 p-2 rounded-md text-white">
-        @lang('file.add_files')
+        @lang('admin.file.add_files')
     </a>
 </div>
 <div class="row gap-3">

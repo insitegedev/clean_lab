@@ -76,7 +76,7 @@
                                         </span>
                         @endif
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.localization.update')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

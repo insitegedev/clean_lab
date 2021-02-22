@@ -4,7 +4,7 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('featureCreateView',app()->getLocale())}}">@lang('admin.create_features')</a>
+                <a class="btn btn-lg btn-success" href="{{route('featureCreateView',app()->getLocale())}}">@lang('admin.create.features')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -17,13 +17,13 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('feature.id')</th>
-                <th>@lang('feature.title')</th>
-                <th>@lang('feature.type')</th>
-                <th>@lang('feature.position')</th>
-                <th>@lang('feature.slug')</th>
-                <th>@lang('feature.status')</th>
-                <th>@lang('feature.actions')</th>
+                <th>@lang('admin.feature.id')</th>
+                <th>@lang('admin.feature.title')</th>
+                <th>@lang('admin.feature.type')</th>
+                <th>@lang('admin.feature.position')</th>
+                <th>@lang('admin.feature.slug')</th>
+                <th>@lang('admin.feature.status')</th>
+                <th>@lang('admin.actions')</th>
             </tr>
             <tr>
                 <th>

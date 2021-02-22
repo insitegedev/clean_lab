@@ -5,7 +5,7 @@
         <div class="col-lg-6">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    @lang('admin.setting_create')
+                    @lang('admin.create.settings')
                 </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('settingCreate',app()->getLocale()),'method' =>'post']) !!}
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit">@lang('admin.create.settings')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

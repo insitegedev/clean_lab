@@ -5,7 +5,7 @@
         <div class="col-lg-6">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    @lang('admin.setting_update')
+                    @lang('admin.setting.update')
                 </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('settingUpdate',[app()->getLocale(),$setting->id]),'method' =>'put']) !!}
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.setting.update')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

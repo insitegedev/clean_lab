@@ -22,11 +22,11 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('language.key')</th>
-                <th>@lang('language.module')</th>
-                <th>@lang('language.translations')</th>
+                <th>@lang('admin.languages.key')</th>
+                <th>@lang('admin.languages.module')</th>
+                <th>@lang('admin.languages.translations')</th>
                 <th>
-                    @lang('language.actions')
+                    @lang('admin.actions')
                 </th>
             </tr>
             <tr>

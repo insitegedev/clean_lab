@@ -5,7 +5,7 @@
         <div class="col-lg-6">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    @lang('admin.feature_create')
+                    @lang('admin.create.features')
                 </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('featureCreate',app()->getLocale()),'method' =>'post']) !!}
@@ -69,10 +69,10 @@
                         </div>
                         <div class="form-check">
                             <label class="form-check-label"><input class="form-check-input" name="status"
-                                                                   type="checkbox">Status</label>
+                                                                   type="checkbox">@lang('admin.feature.status')</label>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.create.features')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

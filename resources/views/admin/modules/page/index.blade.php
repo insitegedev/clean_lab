@@ -17,10 +17,10 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('admin.id')</th>
-                <th>@lang('admin.title')</th>
-                <th>@lang('admin.slug')</th>
-                <th>@lang('admin.status')</th>
+                <th>@lang('admin.page.id')</th>
+                <th>@lang('admin.page.title')</th>
+                <th>@lang('admin.page.slug')</th>
+                <th>@lang('admin.page.status')</th>
                 <th>@lang('admin.actions')</th>
             </tr>
             <tr>
@@ -69,9 +69,9 @@
                         <td class="text-center">{{$page->slug}}</td>
                         <td class="text-center">
                             @if($page->status)
-                                <span class="text-green">@lang('page.on')</span>
+                                <span class="text-green">@lang('admin.page.on')</span>
                             @else
-                                <span class="text-red">@lang('page.off')</span>
+                                <span class="text-red">@lang('admin.page.off')</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">

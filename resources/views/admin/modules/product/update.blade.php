@@ -6,7 +6,7 @@
     <div class="content-box">
         <div class="element-wrapper">
             <h6 class="element-header">
-                @lang('admin.products_update')
+                @lang('admin.product.update')
             </h6>
             <div class="element-box">
                 <div class="row">
@@ -164,7 +164,7 @@
                 <div class="row">
                     <div class="col-2">
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.product.update')</button>
                         </div>
                     </div>
                 </div>

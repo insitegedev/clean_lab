@@ -17,10 +17,10 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('admin.id')</th>
-                <th>@lang('admin.title')</th>
-                <th>@lang('admin.description')</th>
-                <th>@lang('admin.status')</th>
+                <th>@lang('admin.slider.id')</th>
+                <th>@lang('admin.slider.title')</th>
+                <th>@lang('admin.slider.description')</th>
+                <th>@lang('admin.slider.status')</th>
                 <th>@lang('admin.actions')</th>
             </tr>
             <tr>

@@ -11,13 +11,13 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>@lang('admin.key')</th>
+                                <th>@lang('admin.setting.key')</th>
                                 <td>
                                     {{ $setting->key }}
                                 </td>
                             </tr>
                             <tr>
-                                <th>@lang('admin.value')</th>
+                                <th>@lang('admin.setting.value')</th>
                                 <td>
                                     {{ (count($setting->availableLanguage) > 0) ? $setting->availableLanguage[0]->value : '' }}
                                 </td>

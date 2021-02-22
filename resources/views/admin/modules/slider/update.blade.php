@@ -7,7 +7,7 @@
             <div class="col-lg-6">
                 <div class="element-wrapper">
                     <h6 class="element-header">
-                        @lang('admin.slider_create')
+                        @lang('admin.slider.update')
                     </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('slideUpdate',[app()->getLocale(),$slider->id]),'method' =>'put','files' => true]) !!}
@@ -50,7 +50,7 @@
                                                                    type="checkbox">Status</label>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Update</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.slider.update')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

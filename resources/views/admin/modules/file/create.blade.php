@@ -5,20 +5,20 @@
         <div class="col-lg-6">
             <div class="element-wrapper">
             <h6 class="element-header">
-                @lang('file.add_files')
+                @lang('admin.file.add_files')
             </h6>
             <form action="{{route('FileStore', $locale)}}" enctype="multipart/form-data" method="POST" class="bg-white py-3 px-4 row w-full">
                 @csrf
                 <div class="col-lg-12 w-full ">
-                    <label for="file">@lang('news.file')</label>
+                    <label for="file">@lang('admin.new_file')</label>
                     <input required type="file"  name="file" class="text-xs form-control">
                     @error('file')
                     <p>{{$message}}</p>
-                    @enderror 
+                    @enderror
                 </div>
 
                 <div class="px-2 m-0 py-3 col-span-12">
-                    <button class="btn btn-primary mt-2" type="submit">@lang('file.create')</button>
+                    <button class="btn btn-primary mt-2" type="submit">@lang('admin.create.files')</button>
                 </div>
             </form>
         </div>
@@ -28,4 +28,3 @@
 @endsection
 
 
-         

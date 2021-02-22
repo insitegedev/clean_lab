@@ -17,13 +17,13 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Role</th>
-                <th>Actions</th>
+                <th>@lang('admin.user.id')</th>
+                <th>@lang('admin.user.first_name')</th>
+                <th>@lang('admin.user.last_name')</th>
+                <th>@lang('admin.user.email')</th>
+                <th>@lang('admin.user.status')</th>
+                <th>@lang('admin.user.role')</th>
+                <th>@lang('admin.actions')</th>
             </tr>
             <tr>
                 <th>

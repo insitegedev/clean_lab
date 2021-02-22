@@ -1,0 +1,494 @@
+/* _______________  services.html        _______________ */
+
+// section 1 - services-page
+.services-page {
+    margin-top: 175px;
+    margin-bottom: 60px;
+
+    @include mediaMax( 1100px) {
+        margin-top: 140px;
+    }
+    @include mediaMax( 710px) {
+        margin-top: 120px;
+        margin-bottom: 40px;
+    }
+}
+
+
+/* _______________  about-us.html        _______________*/
+
+// section 1 - about-us
+.about-us {
+    margin-top: 175px;
+    margin-bottom: 60px;
+
+    @include mediaMax( 1100px) {
+        margin-top: 140px;
+    }
+    @include mediaMax( 710px) {
+        margin-top: 120px;
+        margin-bottom: 25px;
+    }
+}
+
+.big-title-icon {
+    font-size: 16px;
+    @include font-bold;
+    display: flex;
+    align-items: center;
+    color: #384145;
+    svg {
+        margin-right: 7px;
+    }
+}
+.about-us__wrapper {
+    margin-top: 26px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &-pictures {
+        width: 350px;
+        position: relative;
+        margin-right: 55px;
+        
+
+        @include mediaMax( 1450px) {
+            margin-right: 35px;
+        }
+        @include mediaMax( 900px) {
+            width: 300px;
+        }
+        @include mediaMax( 750px) {
+            width: 100%;
+            margin-bottom: 25px;
+            margin-right: 0;
+        } 
+
+        &--box {
+            border-radius: 16px;
+            overflow: hidden;
+            width: 282px;
+            height: 282px;
+
+            @include mediaMax( 900px) {
+                width: 270px;
+                height: 300px;
+            }
+            @include mediaMax( 750px) {
+                width: 90%;
+                height: 220px;
+            }
+
+            &.one {
+                margin-top: 50px;
+                position: relative;
+                z-index: 5;
+                @include mediaMax( 900px) {
+                    margin-top: 150px;
+                }
+                @include mediaMax( 750px) {
+                    margin-top: 70px;
+                    margin-left: auto;
+                }
+            }
+
+            &.two {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                @include mediaMax( 750px) {
+                    right: auto;
+                }
+            }
+        }
+        
+    }
+
+    &-texts {
+        flex: 1;
+
+        p {
+            font-size: 12px;
+            margin-bottom: 25px;
+            color: #1A1A1A;
+            line-height: 1.4;
+
+            @include mediaMax( 1200px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+
+/* _______________  contact-us.html      _______________*/
+
+// section 1 - contact-us
+.contact-us {
+    margin-top: 175px;
+    margin-bottom: 60px;
+
+    @include mediaMax( 1100px) {
+        margin-top: 140px;
+    }
+    @include mediaMax( 710px) {
+        margin-top: 120px;
+        margin-bottom: 40px;
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1400px;
+    }
+
+    &__left {
+        width: 540px;
+        @include mediaMax(1200px) {
+            width: 48%;
+        }
+        @include mediaMax(850px) {
+            width: 42%;
+        }
+        @include mediaMax(750px) {
+            width: 100%;
+            margin-bottom: 22px;
+        }
+
+        &-p {
+            margin-top: 15px;
+            color: #606060;
+            font-size: 12px;
+            max-width: 420px;
+        }
+
+        &-infos {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .info-box {
+                display: flex;
+                align-items: center;
+
+                @include mediaMax(1100px) {
+                    width: 100%;
+                    &:not(:last-of-type) {
+                        margin-bottom: 12px;
+                    }
+                }
+
+                span {
+                    width: 26px;
+                    height: 26px;
+                    border-radius: 6px;
+                    background-color: $primary;
+                    margin-right: 8px;
+                }
+
+                p {
+                    font-size: 12px;
+                    color: #000;
+                }
+            }
+        }
+       
+    }
+
+    &__form {
+        width: calc(100% - 600px); 
+
+        @include mediaMax(1200px) {
+            width: 50%;
+        }
+        @include mediaMax(850px) {
+            width: 56%;
+        }
+        @include mediaMax(750px) {
+            width: 100%;
+        }
+
+        .inputs-flex {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        input,
+        textarea {
+            font-size: 12px;
+            color: #000;
+            border: none;
+            border-bottom: 1px solid #707070;
+            font-family: inherit;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: #555;
+        }
+        input {
+            width: 48%;
+            line-height: 30px;
+            margin-bottom: 12px;
+            @include mediaMax(750px) {
+                width: 100%;
+            }
+        }
+        textarea {
+            margin-top: 4px;
+            width: 100%;
+            display: block;
+            height: 100px;
+            background-color: transparent;
+        }
+        .error {
+            border-bottom: 1px solid red;
+        }
+
+        &-submit {
+            margin: 20px 0 0 auto;
+            display: block;
+            width: 95px;
+            line-height: 40px;
+            border-radius: 12px;
+            background-color: $primary;
+            color: #111;
+            font-size: 12px;
+            @include font-bold;
+            transition: .5s;
+
+            &:hover {
+                background-color: $secondary;
+                box-shadow:  0 2px 6px rgba($primary, .5);
+            }
+
+            @include mediaMax(750px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+/* _______________  service-details.html _______________ */
+
+// section 1 - details
+.details {
+    margin-top: 145px;
+    margin-bottom: 40px;
+    color: #1A1A1A;
+
+    @include mediaMax( 1100px) {
+        margin-top: 125px;
+    }
+    @include mediaMax( 710px) {
+        margin-top: 115px;
+        margin-bottom: 25px;
+    }
+
+
+    &__hero {
+        width: 100%;
+        height: 440px;
+        border-radius: 26px;
+        overflow: hidden;
+        margin-bottom: 27px;
+
+        @include mediaMax( 1400px) {
+            height: 350px;
+            margin-bottom: 22px;
+        }
+        @include mediaMax( 850px) {
+            height: 250px;
+        }
+        @include mediaMax( 650px) {
+            height: 190px;
+            margin-bottom: 18px;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        @include font-bold;
+        font-size: 24px;
+        margin-bottom: 22px;
+
+        span {
+            background-color: $primary;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            margin-right: 15px;
+            svg,img {
+                width: 27px;
+                height: auto;
+                margin-left: 5px;
+            }
+        }
+
+        @include mediaMax( 1450px) {
+            font-size: 22px;
+            margin-bottom: 16px;
+
+            span {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @include mediaMax( 700px) {
+            font-size: 18px;
+            margin-bottom: 14px;
+
+            span {
+                width: 55px;
+                height: 55px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__main {
+
+        p {
+            margin-bottom: 25px;
+            font-size: 12px;
+
+            @include mediaMax( 850px) {
+                margin-bottom: 18px;
+            }
+        }
+
+        &-bot {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &--video {
+                width: 220px;
+                height: 210px;
+                border-radius: 16px;
+                overflow: hidden;
+                position: relative;
+                margin-right: 15px;
+
+                @include mediaMax( 850px) {
+                    width: 100%;
+                    height: 190px;
+                    margin-bottom: 22px;
+                }
+
+                &:hover .overlay {
+                    background-color: rgba( $primary, .3);
+                }
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba( $primary, .6);
+                    transition: .9s;
+
+                    button {
+                        width: 62px;
+                        height: 62px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        transition: .4s;
+                        &:hover {
+                            background-color: $secondary;
+                            svg {
+                                fill: darken($secondary, 50%);
+                            }
+                        }
+                        svg {
+                            fill: $primary;
+                            transition: .4s;
+                            width: 22px;
+                            height: 22px;
+
+                        }
+                    }
+                }
+            }
+            &--texts {
+                flex: 1;
+            }
+        }
+    }
+}
+
+
+
+/* _______________  vacancy.html        _______________ */
+
+// section 1 - vacancy
+.vacancy {
+    margin-top: 145px;
+    margin-bottom: 50px;
+    color: #1A1A1A;
+
+    @include mediaMax( 1100px) {
+        margin-top: 125px;
+    }
+    @include mediaMax( 710px) {
+        margin-top: 115px;
+        margin-bottom: 25px;
+    }
+
+    &__hero {
+        height: 320px;
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: 22px;
+
+        @include mediaMax( 900px) {
+            height: 260px;
+            margin-bottom: 20px;
+        }
+        @include mediaMax( 900px) {
+            height: 220px;
+            border-radius: 14px;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        @include font-bold;
+        margin-bottom: 15px;
+
+        @include mediaMax( 900px) {
+            font-size: 18px;
+        }
+    }
+
+    &__texts {
+        p {
+            font-size: 12px;
+            margin-bottom: 10px;
+            max-width: 830px;
+            padding-left: 9px;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 3px;
+                height: 100%;
+                border-radius: 4px 0 0 4px;
+                background-color: $primary;
+            }
+        }
+    }
+
+
+}
+

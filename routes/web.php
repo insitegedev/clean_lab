@@ -32,6 +32,7 @@ use App\Http\Controllers\PurchaseController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group([
     'prefix' => '{locale}',
     'where' => ['locale' => '[a-zA-Z]{2}'],
@@ -132,6 +133,8 @@ Route::group([
                 ->name('edit', 'pageEditView')
                 ->name('update', 'pageUpdate')
                 ->name('show', 'pageShow');
+
+
 
             // Slider
             Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class)

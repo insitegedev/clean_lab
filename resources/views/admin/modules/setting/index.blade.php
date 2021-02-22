@@ -17,9 +17,9 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('admin.id')</th>
-                <th>@lang('admin.key')</th>
-                <th>@lang('admin.value')</th>
+                <th>@lang('admin.setting.id')</th>
+                <th>@lang('admin.setting.key')</th>
+                <th>@lang('admin.setting.value')</th>
                 <th>@lang('admin.actions')</th>
             </tr>
             <tr>

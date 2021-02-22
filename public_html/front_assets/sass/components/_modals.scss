@@ -1,0 +1,57 @@
+// modals
+// service-details - video modal
+.video-modal {
+    visibility: hidden;
+    opacity: 0;
+    transition: .7s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba( darken($primary, 60%), .9);
+    z-index: 1100;
+    
+    &.shown {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__content {
+        max-width: 85%;
+        max-height: 80vh;
+        position: relative;
+
+        .video-modal-close {
+            position: absolute;
+            top: -18px;
+            right: -18px;
+            height: 36px;
+            width: 36px;
+            background-color: #fff;
+            border-radius: 50%;
+            color: $primary;
+            transition: .4s;
+            span {
+                font-family: inherit;
+                line-height:1;
+                text-align: center;
+                font-size: 26px;
+            }
+            &:hover {
+                color: red;
+            }
+        }
+
+        iframe,video {
+            max-width: 100%;
+            max-height: 100%;
+            width: 850px;
+            height: 440px;
+
+            @include mediaMax( 750px) {
+                max-height: 280px;
+            }
+        }
+    }
+}

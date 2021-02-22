@@ -5,7 +5,7 @@
             <div class="col-lg-6">
                 <div class="element-wrapper">
                     <h6 class="element-header">
-                        Localization Create
+                        @lang('admin.create.localizations')
                     </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('localizationCreate',app()->getLocale()),'method' =>'post']) !!}
@@ -75,7 +75,7 @@
                                         </span>
                         @endif
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.create.localizations')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

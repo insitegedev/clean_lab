@@ -2,7 +2,7 @@
 /**
  *  app/Services/ProductService.php
  *
- * User: 
+ * User:
  * Date-Time: 18.12.20
  * Time: 11:07
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
@@ -91,16 +91,16 @@ class ProductService
         }
         if($request->sort !== null || $request->sort != ''){
             switch($request->sort){
-                case "priceup" : 
+                case "priceup" :
                     $data = $data->orderBy('price', 'asc');
                     break;
                 case "pricedown" :
                     $data = $data->orderBy('price', 'desc');
                     break;
-                case "popular" : 
+                case "popular" :
                     $data = $data->orderBy('position', 'asc');
                     break;
-                default : 
+                default :
                     $data = $data->orderBy('id', 'desc');
 
             }

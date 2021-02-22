@@ -5,7 +5,7 @@
     <div class="content-box">
         <div class="element-wrapper">
             <h6 class="element-header">
-                @lang('admin.page_update')
+                @lang('admin.page.update')
             </h6>
             <div class="element-box">
                 {!! Form::open(['url' => route('pageUpdate',[app()->getLocale(),$page->id]),'method' =>'put','files' => true]) !!}
@@ -139,7 +139,7 @@
                     <div class="row">
                         <div class="col-2">
                             <div class="form-buttons-w">
-                                <button class="btn btn-primary" type="submit"> Update</button>
+                                <button class="btn btn-primary" type="submit"> @lang('admin.page.update')</button>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,54 @@
+// cards
+
+// service card
+.services__card {
+    outline: none;
+    background-color: $secondary;
+    border-radius: 13px;
+    overflow: hidden;
+    transition: .5s;
+
+    &:hover &-hero img {
+        transform: scale(1.03);
+        transition: .5s;
+    }
+
+    &-hero {
+        height: 172px;
+        overflow: hidden;
+        background-color: #fff;
+        img {
+            transition: .1s;
+        }
+    }
+
+    &-body {
+        padding: 13px 13px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .icon {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $primary;
+        }
+        &--texts {
+            margin-left: 10px;
+            padding-top: 6px;
+            color: #1A1A1A;
+
+            h2 {
+                font-size: 15px;
+                @include font-bold;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: #818181;
+                font-size: 11px;
+                line-height: 1.45;
+            }
+        }
+    }
+}

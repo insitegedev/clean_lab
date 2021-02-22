@@ -4,11 +4,11 @@
 
 @extends('admin.layouts.app')
 @section('content')
-    {!! Form::open(['url' => route('AnswerIndex',$locale),'method' =>'get']) !!}
-    <div class="controls-above-table">
-        <div class="row">
-            <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('AnswerCreate',$locale)}}">@lang('admin.create_answer')</a>
+    {!! Form::open(['url' => rout
+            <div class="col-sm-2">e('AnswerIndex',$locale),'method' =>'get']) !!}
+                <div class="controls-above-table">
+                    <div class="row">
+                <a class="btn btn-lg btn-success" href="{{route('AnswerCreate',$locale)}}">@lang('admin.create.answers')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -22,22 +22,22 @@
             <thead>
             <tr>
                 <th>
-                    @lang('answer.feature')
+                    @lang('admin.answer.feature')
                 </th>
                 <th>
-                    @lang('answer.title')
+                    @lang('admin.answer.title')
                 </th>
                 <th>
-                    @lang('answer.position')
+                    @lang('admin.answer.position')
                 </th>
                 <th>
-                    @lang('answer.slug')
+                    @lang('admin.answer.slug')
                 </th>
                 <th>
-                    @lang('answer.status')
+                    @lang('admin.answer.status')
                 </th>
                 <th>
-                    @lang('answer.permission')
+                    @lang('admin.answer.permission')
                 </th>
             </tr>
             <tr>
@@ -108,9 +108,9 @@
                         </td>
                         <td class="text-center">
                             @if($feature->status)
-                            <span class="text-green">@lang('answer.on')</span>
+                            <span class="text-green">@lang('admin.answer.on')</span>
                         @else
-                            <span class="text-red">@lang('answer.off')</span>
+                            <span class="text-red">@lang('admin.answer.off')</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">

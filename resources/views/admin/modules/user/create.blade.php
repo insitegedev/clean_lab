@@ -7,7 +7,7 @@
             <div class="col-lg-6">
                 <div class="element-wrapper">
                     <h6 class="element-header">
-                        @lang('admin.create_user')
+                        @lang('admin.create.user')
                     </h6>
                     <div class="element-box">
                         <div class="row">
@@ -170,13 +170,13 @@
                             <div class="col-6">
                                 <div class="form-check">
                                     <label class="form-check-label"><input class="form-check-input" name="status"
-                                                                           type="checkbox">Status</label>
+                                                                           type="checkbox">@lang('admin.user.status')</label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> Create</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.create.users')</button>
                         </div>
                     </div>
                 </div>

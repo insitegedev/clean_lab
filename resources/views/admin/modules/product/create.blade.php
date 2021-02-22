@@ -5,7 +5,7 @@
     <div class="content-box">
         <div class="element-wrapper">
             <h6 class="element-header">
-                @lang('admin.products_create')
+                @lang('admin.create.products')
             </h6>
             <div class="element-box">
                 <div class="row">
@@ -139,7 +139,7 @@
                         @if(count($features) > 0)
                             @foreach($features as $feature)
                                 @if(count($feature->answer) > 0)
-                                    {{ Form::label('featurs',(count($feature->availableLanguage) > 0) ? $feature->availableLanguage[0]->title :$feature->language[0]->title , []) }}
+                                    {{ Form::label('features',(count($feature->availableLanguage) > 0) ? $feature->availableLanguage[0]->title :$feature->language[0]->title , []) }}
                                     <select name="features[{{$feature->id}}][]" class="form-control select2"
                                             multiple="true">
                                         @foreach($feature->answer as $answer)
@@ -162,7 +162,7 @@
                 <div class="row">
                     <div class="col-2">
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> {{__('admin.create')}}</button>
+                            <button class="btn btn-primary" type="submit"> {{__('admin.create.product')}}</button>
                         </div>
                     </div>
                 </div>

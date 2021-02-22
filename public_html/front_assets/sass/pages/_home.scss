@@ -1,0 +1,600 @@
+/*----------------------   index.html -------------  */
+
+// section 1 - hero
+.hero {
+    margin-top: 40px;
+    @include mediaMax(850px) {
+        margin-top: 80px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__left {
+        width: 42%;
+        height: 710px;
+        background-color: $primary;
+        border-radius: 32px;
+        padding: 5px 40px;
+        clip-path: polygon(100% 0, 100% 32px, 82% 100%, 0 100%, 0 0);
+
+        @include mediaMax(1050px) {
+            width: 50%;
+        }
+        @include mediaMax(850px) {
+            width: 100%;
+            clip-path: none;
+            border-radius: 25px;
+            height: 670px;
+        }
+        @include mediaMax(550px) {
+            padding: 5px 10px;
+            height: 655px;
+        }
+
+        &-logo img {
+            height: 165px;
+            @include mediaMax(850px) {
+                margin: 0 auto;
+            }
+            @include mediaMax(550px) {
+                height: 145px;
+
+            }
+        }
+
+        &-bubles {
+            margin-top: 10px;
+            position: relative;
+            width: 350px;
+            height: 160px;
+
+            @include mediaMax(850px) {
+                margin: 10px auto 0;
+            }
+            @include mediaMax(550px) {
+                width: 100%;
+                margin: 1px auto 0;
+                transform: translateX(-5px);
+            }
+
+            span {
+                position: absolute;
+                transition: .3s;
+                top: 100%;
+                left: 50%;
+                border-radius: 50%;
+                img {
+                    animation: spin 2s infinite linear;
+                }
+            }
+
+            .b-1 {
+                top: 50px;
+                left: 5px;
+                animation: bounce 2.2s infinite linear ;
+            }
+            .b-2 {
+                top: 5px;
+                left: 50px;
+                animation: bounce 5s infinite linear;
+            }
+            .b-3 {
+                top: 80px;
+                left: 60px;
+                animation: bounce 3s infinite linear;
+            }
+            .b-4 {
+                top: 70px;
+                left: 130px;
+                animation: bounce-horiz 3s infinite linear;
+            }
+            .b-5 {
+                top: 90px;
+                left: 155px;
+                img {
+                    transform: rotate(95deg);
+                }
+                animation: bounce 3s infinite linear;
+            }
+            .b-6 {
+                top: 45px;
+                left: 180px;
+                animation: bounce 2s infinite linear;
+            }
+            .b-7 {
+                top: 35px;
+                left: 250px;
+                animation: bounce 4s infinite linear;
+            }
+            .bubl {
+                width: 5px;
+                height: 5px;
+                background-color: #fff;
+                border-radius: 50px;
+                position: absolute;
+                bottom: 0%;
+                left: 50%;
+                animation: buble 5s infinite linear ;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+
+    &__right {
+        margin-top: 180px;
+        width: 55%;
+        @include mediaMax(1450px) {
+            margin-top: 120px;
+        }
+        @include mediaMax(1050px) {
+            width: 42%;
+        }
+        @include mediaMax(850px) {
+            display: none;
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            max-width: 800px;
+
+            img {
+                height: 190px;
+                @include mediaMax(1450px) {
+                    height: 133px;
+                    margin-left: -15px;
+                }
+            }
+        }
+
+        &-text {
+            @include mediaMax(1450px) {
+                width: 100%;
+                order: 1;
+            }
+            margin-bottom: 10px;
+            color: #384145;
+            .title {
+                font-size: 35px;
+                @include font-bold;
+                @include mediaMax(1450px) {
+                    font-size: 30px;;
+                }
+            }
+            .brand-name {
+                font-family: 'Poppins', sans-serif;
+                font-size: 40px;
+                line-height: 1.5;
+                margin-top: 2px;
+                @include mediaMax(1450px) {
+                    font-size: 28px;;
+                }
+            }
+        }
+    }
+}
+
+// section 2 - service-section
+.service-section {
+    margin-top: -310px;
+    z-index: 5;
+    position: relative;
+
+    &__wrap {
+        margin: 0 30px 0;
+        @include mediaMax( 1600px) {
+            margin: 0 20px 0;
+        }
+        @include mediaMax( 700px) {
+            margin: 0 18px 0;
+        }
+    }
+}
+
+// section 3 - why-us
+.why-us {
+    margin-top: 75px;
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        padding: 5px  12px  10px 45px;
+        background-color: $primary;
+        z-index: 5;
+
+        @include mediaMax(1250px) {
+           flex-wrap: wrap;
+           padding: 5px  22px  10px 20px;
+        } 
+        @include mediaMax(680px) {
+            padding: 0px  20px  5px 16px;
+        }
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            border-radius: 20px;
+            height: 60px;
+            width: 100%;
+            z-index: -1;
+            left: 0;
+            background-color: $primary;
+        }
+        &::before {
+            top: -30px;
+            transform: skewY(0.8deg);
+        }
+        &::after {
+            bottom: -30px;
+            transform: skewY(-0.8deg);
+
+        }
+
+        &-left {
+            color: #1A1A1A;
+            width: 434px;
+            @include mediaMax(680px) {
+                width: 100%;
+            }
+
+            &--title {  
+                font-size: 30px;
+                @include font-bold;
+                margin-bottom: 12px;
+                @include mediaMax(680px) {
+                    font-size: 26px;
+                }
+            }
+            &--p {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+
+            &--body {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                @include mediaMax(680px) {
+                    flex-wrap: wrap;
+                    margin-top: 20px;
+                }
+
+                .ul {
+                    p:not(:last-of-type) {
+                        margin-bottom: 15px;
+                    }
+                    p {
+                        font-size: 12px;
+                        display: flex;
+                        align-items: center;
+                    }
+                    span {
+                        width: 26px;
+                        height: 26px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        margin-right: 10px;
+                    }
+                }
+
+                .award {
+                    width: 170px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    text-align: center;
+
+                    @include mediaMax(680px) {
+                        margin-top: 20px;
+                        width: 200px;
+                        padding-bottom: 10px;
+                    }
+                    
+                    &__top {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 12px;
+                        span {
+                            width: 69px;
+                            height: 69px;
+                            border-radius: 0 0 10px 0;
+                            background-color: $secondary;
+                        }
+                        h2,h1,h3 {
+                            font-size: 45px;
+                            @include font-bold;
+                            flex: 1;
+                            @include mediaMax(680px) {
+                                font-size: 35px;
+                                line-height: 60px
+                            }
+                        }
+
+                    }
+                    p {
+                        @include font-bold;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &-gallery {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: calc(100% - 650px);
+            margin-left: auto;
+
+            @include mediaMax(1450px) {
+                width: calc(100% - 580px);
+            }
+            @include mediaMax(1250px) {
+                width: 100%;
+                order: 2;
+                margin-top: 40px;
+            }
+            @include mediaMax(680px) {
+                flex-wrap: wrap;
+                margin-top: 25px;
+            }
+
+            span {
+                position: relative;
+                height: 324px;
+                width: 32%;
+
+                @include mediaMax(680px) {
+                    width: 100%;
+                    height: 220px;
+                    &:not(:last-of-type) {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &::after {
+                    border-radius: 24px;
+                    content: "";
+                    position: absolute;
+                    top: 7px;
+                    left: 7px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fff;
+                }
+
+                img {
+                    border-radius: 24px;
+                    position: relative;
+                    z-index: 2;
+                }
+            }
+        }
+
+        &-decoration {
+            width: 120px;
+            padding-top: 38px;
+            margin-left: 22px;
+
+            @include mediaMax(1450px) {
+                width: 95px;
+                padding-top: 66px;
+            }
+            @include mediaMax(1250px) {
+                margin: 0 auto;
+                padding-top: 35px;
+            }
+            @include mediaMax(680px) {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// section 4 - working
+.working {
+    margin-top: 95px;
+    color: #1A1A1A;
+
+    @include mediaMax(750px) {
+        margin-top: 85px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    &__cover {
+        width: 40%;
+        border-radius: 32px;
+        overflow: hidden;
+        @include mediaMax(1200px) {
+            width: 100%;
+            max-width: 490px;
+            height: 380px;
+            margin: 0 auto;
+        }
+        @include mediaMax(500px) {
+            height: 280px;
+        }
+    }
+
+    &__main {
+        width: 58%;
+
+        @include mediaMax(1200px) {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        &-heading {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            @include font-bold;
+            font-size: 30px;
+
+            @include mediaMax(750px) {
+                font-size: 23px;
+                margin-bottom: 12px;
+            }
+
+            span {
+                width: 28px;
+                height: 28px;
+                background-color: $primary;
+                border-radius: 50%;
+                margin-right: 20px;
+
+                img {
+                    width: 16px;
+                    height: auto;
+                }
+            }
+        }
+
+        &-p {
+            font-size: 18px;
+            line-height: 1.3;
+            @include mediaMax(750px) {
+                font-size: 15px;
+            }
+        }
+
+        &-steps {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            @include mediaMax(750px) {
+                margin-top: 30px;
+            }
+
+            .step {
+                width: 32%;
+                background: #fff;
+                border: 1px solid rgba( #444, .06);
+                border-radius: 14px;
+                padding: 10px;
+
+                @include mediaMax(750px) {
+                    width: 100%;
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &__top {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+
+                    .logo {
+                        width: 33px;
+                        height: auto;
+                    }
+
+                    span {
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        background-color: $primary;
+                        color: #fff;
+                        font-size: 12px;
+                    }
+                }
+
+                &__body {
+                    h2,h3 {
+                        font-size: 14px;
+                        @include font-bold;
+                        margin-bottom: 6px;
+                    }
+                    p {
+                        font-size: 12px;
+                        max-width: 220px;
+                    }
+                }
+
+            }
+        }
+    }
+    
+}
+
+// section 5 - banners
+.banners {
+    margin-top: 60px;
+    margin-bottom: 75px;
+
+    @include mediaMax(1540px) {
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+    @include mediaMax(650px) {
+        margin-top: 40px;
+        margin-bottom: 55px;
+    }
+
+    &__wrapper{ 
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        border-radius: 20px;
+        overflow: hidden;
+
+        &.sm {
+            width: calc(100%  - 1240px);
+            @include mediaMax(1540px) {
+                width: 18%;
+            }
+            @include mediaMax(650px) {
+                width: 100%;
+                height: 105px;
+                margin-bottom: 15px;
+            }
+        }
+        &.big {
+            width: 1200px;
+            height: 390px;
+            @include mediaMax(1540px) {
+                width: 80%;
+                height: 290px;
+            }
+            @include mediaMax(1150px) {
+                height: 210px;
+            }
+            @include mediaMax(850px) {
+                height: 170px;
+            }
+            @include mediaMax(650px) {
+                width: 100%;
+                height: 105px;
+            }
+        }
+    }
+ 
+}
+
+// section 6 -

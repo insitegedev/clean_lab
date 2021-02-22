@@ -11,49 +11,49 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>First Name</th>
+                                <th>@lang('admin.user.first_name')/th>
                                 <td>
                                     {{ (count($user->availableLanguage) > 0) ? $user->availableLanguage[0]->first_name : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Last Name</th>
+                                <th>@lang('admin.user.last_name')</th>
                                 <td>
                                     {{ (count($user->availableLanguage) > 0) ? $user->availableLanguage[0]->last_name : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Email</th>
+                                <th>@lang('admin.user.email')</th>
                                 <td>
                                     {{ $user->email}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Phone</th>
+                                <th>@lang('admin.user.phone')</th>
                                 <td>
                                     {{ $user->phone}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Personal ID</th>
+                                <th>@lang('admin.user.personal_id')</th>
                                 <td>{{$user->id_number}}</td>
                             </tr>
                             <tr>
-                                <th>Address</th>
+                                <th>@lang('admin.user.address')</th>
                                 <td>
                                     {{ (count($user->availableLanguage) > 0) ? $user->availableLanguage[0]->address : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Status</th>
+                                <th>@lang('admin.user.status')</th>
                                 <td>{{$user->status ? 'Active' : 'Not Active'}}</td>
                             </tr>
                             <tr>
-                                <th>Create at</th>
+                                <th>@lang('admin.user.created_at')</th>
                                 <td>{{\Carbon\Carbon::parse($user->create_at)}}</td>
                             </tr>
                             <tr>
-                                <th>Update at</th>
+                                <th>@lang('admin.user.updated_at')</th>
                                 <td>{{\Carbon\Carbon::parse($user->update_at)}}</td>
                             </tr>
                             </tbody>

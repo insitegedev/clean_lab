@@ -17,13 +17,13 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('lang.id')</th>
-                <th>@lang('lang.title')</th>
-                <th>@lang('lang.abbreviation')</th>
-                <th>@lang('lang.native')</th>
-                <th>@lang('lang.locale')</th>
-                <th>@lang('lang.status')</th>
-                <th>@lang('lang.actions')</th>
+                <th>@lang('admin.localization.id')</th>
+                <th>@lang('admin.localization.title')</th>
+                <th>@lang('admin.localization.abbreviation')</th>
+                <th>@lang('admin.localization.native')</th>
+                <th>@lang('admin.localization.locale')</th>
+                <th>@lang('admin.localization.status')</th>
+                <th>@lang('admin.actions')</th>
             </tr>
             <tr>
                 <th>
