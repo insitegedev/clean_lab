@@ -25,23 +25,23 @@
             <div class="navigation-sm">
                 <ul class="navigation">
                     <li class="navigation__item">
-                        <a href="{{route('homePage',app()->getLocale())}}" class="navigation__link acitve">@lang('client.home')</a>
+                        <a href="{{route('homePage',app()->getLocale())}}" class="navigation__link acitve">@lang('front.home')</a>
                     </li>
 
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">სერვისები</a>
+                        <a href="" class="navigation__link">@lang('front.services')</a>
                     </li>
 
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">ჩვენ შესახებ</a>
+                        <a href="" class="navigation__link">@lang('front.about_us')</a>
                     </li>
 
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">კონტაქტი</a>
+                        <a href="" class="navigation__link">@lang('front.contact')</a>
                     </li>
 
                     <li class="navigation__item">
-                        <a href="" class="navigation__link highlighted">ვაკანსიები</a>
+                        <a href="" class="navigation__link highlighted">@lang('front.vacancies')</a>
                     </li>
 
                 </ul>
@@ -65,21 +65,21 @@
                 </a>
             </div>
 
+            @if(isset($languages['current']))
             <div class="language-box">
                 <div class="language-box__selected">
-                    <img src="/front_assets/img/icons/flag-geo.png" alt="">
+                    <img src="/adm/img/flags-icons/{{$languages['current']['img']}}" alt="">
                 </div>
+                @endif
+                @if(count($languages['data']) > 0)
 
                 <div class="language-box__menu">
-                    <a href="">
-                        <img src="/front_assets/img/icons/flag-geo.png" alt="">
+                    @foreach($languages['data'] as $data)
+                    <a href="{{$data['url']}}">
+                        <img src="/adm/img/flags-icons/{{$data['img']}}" alt="">
                     </a>
-                    <a href="">
-                        <img src="/front_assets/img/icons/eng.webp" alt="">
-                    </a>
-                    <a href="">
-                        <img src="/front_assets/img/icons/rus.svg" alt="">
-                    </a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
         </div>

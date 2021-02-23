@@ -1932,7 +1932,7 @@ p {
   }
 }
 
-/* _______________  services.html        _______________ */
+/* _______________  services.blade.php        _______________ */
 .services-page {
   margin-top: 175px;
   margin-bottom: 60px;
@@ -1951,7 +1951,7 @@ p {
   }
 }
 
-/* _______________  about-us.html        _______________*/
+/* _______________  about-us.blade.php        _______________*/
 .about-us {
   margin-top: 175px;
   margin-bottom: 60px;
@@ -2095,7 +2095,7 @@ p {
   }
 }
 
-/* _______________  contact-us.html      _______________*/
+/* _______________  contact-us.blade.php      _______________*/
 .contact-us {
   margin-top: 175px;
   margin-bottom: 60px;
@@ -2311,7 +2311,7 @@ p {
   }
 }
 
-/* _______________  service-details.html _______________ */
+/* _______________  service-details.blade.php _______________ */
 .details {
   margin-top: 145px;
   margin-bottom: 40px;
@@ -2493,7 +2493,7 @@ p {
           flex: 1;
 }
 
-/* _______________  vacancy.html        _______________ */
+/* _______________  vacancy.blade.php        _______________ */
 .vacancy {
   margin-top: 145px;
   margin-bottom: 50px;

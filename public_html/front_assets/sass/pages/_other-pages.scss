@@ -1,4 +1,4 @@
-/* _______________  services.html        _______________ */
+/* _______________  services.blade.php        _______________ */
 
 // section 1 - services-page
 .services-page {
@@ -15,7 +15,7 @@
 }
 
 
-/* _______________  about-us.html        _______________*/
+/* _______________  about-us.blade.php        _______________*/
 
 // section 1 - about-us
 .about-us {
@@ -51,7 +51,7 @@
         width: 350px;
         position: relative;
         margin-right: 55px;
-        
+
 
         @include mediaMax( 1450px) {
             margin-right: 35px;
@@ -63,7 +63,7 @@
             width: 100%;
             margin-bottom: 25px;
             margin-right: 0;
-        } 
+        }
 
         &--box {
             border-radius: 16px;
@@ -103,7 +103,7 @@
                 }
             }
         }
-        
+
     }
 
     &-texts {
@@ -124,7 +124,7 @@
 
 
 
-/* _______________  contact-us.html      _______________*/
+/* _______________  contact-us.blade.php      _______________*/
 
 // section 1 - contact-us
 .contact-us {
@@ -196,11 +196,11 @@
                 }
             }
         }
-       
+
     }
 
     &__form {
-        width: calc(100% - 600px); 
+        width: calc(100% - 600px);
 
         @include mediaMax(1200px) {
             width: 50%;
@@ -274,7 +274,7 @@
 
 
 
-/* _______________  service-details.html _______________ */
+/* _______________  service-details.blade.php _______________ */
 
 // section 1 - details
 .details {
@@ -426,7 +426,7 @@
 
 
 
-/* _______________  vacancy.html        _______________ */
+/* _______________  vacancy.blade.php        _______________ */
 
 // section 1 - vacancy
 .vacancy {

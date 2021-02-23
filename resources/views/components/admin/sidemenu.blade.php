@@ -20,7 +20,7 @@
           <li class="sub-header">
             <span>Options</span>
           </li>
-   
+
             <li class="">
               <a href="{{route('productIndex',app()->getLocale() )}}">
                     <div class="icon-w">
@@ -36,43 +36,13 @@
                     <span>{{__('admin.localizations')}}</span></a>
             </li>
 
-            <li class="">
-                <a href="{{route('featureIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.features')}}</span></a>
-            </li>
             <li>
               <a href="/{{app()->getLocale()}}/admin/languages" >
                 <div class="icon-w">
                   <div class="os-icon os-icon-flag"></div>
                 </div>
                 <span>@lang('admin.language')</span></a>
-  
-            </li>
-            <li>
-              <a href="/{{app()->getLocale()}}/admin/answers">
-                <div class="icon-w">
-                  <div class="os-icon os-icon-flag"></div>
-                </div>
-                <span>@lang('admin.answers')</span></a>
-  
-            </li>
-            <li>
-              <a href="/{{app()->getLocale()}}/admin/files">
-                <div class="icon-w">
-                  <div class="os-icon os-icon-flag"></div>
-                </div>
-                <span>@lang('admin.files')</span></a>
-  
-            </li>
-            <li class="">
-                <a href="{{route('userIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.users')}}</span></a>
+
             </li>
             <li class="">
                 <a href="{{route('pageIndex',app()->getLocale() )}}">
@@ -88,17 +58,9 @@
                     </div>
                     <span>{{__('admin.settings')}}</span></a>
             </li>
-            <li class="">
-                <a href="{{route('slideIndex',app()->getLocale() )}}">
-                    <div class="icon-w">
-                        <div class="os-icon os-icon-life-buoy"></div>
-                    </div>
-                    <span>{{__('admin.slider')}}</span></a>
-            </li>
-         
 
-       
-      
+
+
         </ul>
       </div>
 </div>

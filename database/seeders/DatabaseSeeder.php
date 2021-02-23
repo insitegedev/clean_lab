@@ -22,10 +22,6 @@ class DatabaseSeeder extends Seeder
                 'status' => true
             ],
             [
-                'slug' => 'products',
-                'status' => true
-            ],
-            [
                 'slug' => 'about-us',
                 'status' => true
             ],
@@ -34,43 +30,15 @@ class DatabaseSeeder extends Seeder
                 'status' => true
             ],
             [
-                'slug' => 'cart',
+                'slug' => 'vacancy',
                 'status' => true
             ],
             [
-                'slug' => 'blog-details',
+                'slug' => 'services',
                 'status' => true
             ],
             [
-                'slug' => 'blog',
-                'status' => true
-            ],
-            [
-                'slug' => 'cabinet-info',
-                'status' => true
-            ],
-            [
-                'slug' => 'cabinet-orders',
-                'status' => true
-            ],
-            [
-                'slug' => 'details',
-                'status' => true
-            ],
-            [
-                'slug' => 'favourites',
-                'status' => true
-            ],
-            [
-                'slug' => 'purchase-auth',
-                'status' => true
-            ],
-            [
-                'slug' => 'purchase-un-auth',
-                'status' => true
-            ],
-            [
-                'slug' => 'wine-club',
+                'slug' => 'service-detail',
                 'status' => true
             ],
         ];
@@ -88,15 +56,6 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'key' => 'facebook',
-            ],
-            [
-                'key' => 'twitter',
-            ],
-            [
-                'key' => 'pinterest',
-            ],
-            [
-                'key' => 'linkedin',
             ],
             [
                 'key' => 'instagram',

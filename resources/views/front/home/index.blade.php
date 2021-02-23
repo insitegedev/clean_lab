@@ -57,7 +57,7 @@
                                       stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
                             </svg>
 
-                            სერვისები
+                          @lang('front.services')
                         </h2>
 
                         <div class="services__wrapper">
@@ -178,7 +178,7 @@
                 <div class="why-us__wrapper">
 
                     <div class="why-us__wrapper-left">
-                        <h2 class="why-us__wrapper-left--title">რატომ ჩვენ?</h2>
+                        <h2 class="why-us__wrapper-left--title">@lang('front.why_us')</h2>
                         <p class="why-us__wrapper-left--p">ლორემ იპსუმ შოუ უდაღავენ გიორგისთან აღმოსავლელი მცველს,
                             დავუტოვებდით ღარიბია სკოლებში მაჩვენეთ ამბობ კვნესასა გაძვირდა საოცარი თეთრდება. დაგვინთეს
                             არსებაა პროგრესს ეფექტსაც თვინიერ, განუზომელ ღვდლის ერთიმეორეზე</p>
@@ -247,7 +247,7 @@
                        <span class="flex-center">
                            <img class="img-cover" src="/front_assets/img/svg-how-works.svg" alt="">
                        </span>
-                        როგორ მუშაობს?
+                        @lang('front.how_works')
                     </h2>
 
                     <p class="working__main-p">

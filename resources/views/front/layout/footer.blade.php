@@ -4,7 +4,7 @@
         <div class="footer__wrapper">
 
             <div class="b-col">
-                <h2 class="footer__title">ჩვენი სერვისები</h2>
+                <h2 class="footer__title">@lang('front.our_services')</h2>
 
                 <div class="footer__services">
                     <p>
@@ -35,18 +35,18 @@
             </div>
 
             <div class="b-col">
-                <h2 class="footer__title">ლინკები</h2>
+                <h2 class="footer__title">@lang('front.links')</h2>
 
                 <ul class="footer__nav">
-                    <a href="">მთავარი </a>
-                    <a href="">სერვისები</a>
-                    <a href="">ჩვენ შესახებ</a>
-                    <a href="">კონტაქტი</a>
+                    <a href="">@lang('front.home')</a>
+                    <a href="">@lang('front.services')</a>
+                    <a href="">@lang('front.about_us')</a>
+                    <a href="">@lang('front.contact')</a>
                 </ul>
             </div>
 
             <div class="b-col">
-                <h2 class="footer__title">საკონტაქტო ინფო</h2>
+                <h2 class="footer__title">@lang('front.contact')</h2>
 
                 <div class="footer__info">
                     <div class="col">

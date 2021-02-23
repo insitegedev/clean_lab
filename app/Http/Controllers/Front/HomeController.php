@@ -2,7 +2,7 @@
 /**
  *  app/Http/Controllers/Front/HomeController.php
  *
- * User: 
+ * User:
  * Date-Time: 23.02.21
  * Time: 10:23
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
