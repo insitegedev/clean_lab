@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\Admin\AnswerController;
 use App\Http\Controllers\Admin\DictionaryController;
 use App\Http\Controllers\Admin\FeatureController;
@@ -12,15 +11,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CabinetController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\FavoriteController;
-use App\Http\Controllers\FrontController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\Front\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -157,6 +148,6 @@ Route::group([
         });
     });
 
-
+    Route::get('/',[HomeController::class,'index'])->name('homePage');
 });
 
