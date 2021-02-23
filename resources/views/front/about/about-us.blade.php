@@ -8,7 +8,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="12.5" height="12" viewBox="0 0 11.975 11.437">
                         <path id="Icon_feather-star" data-name="Icon feather-star" d="M8.488,3l1.7,3.435,3.792.554L11.231,9.662l.648,3.775L8.488,11.654,5.1,13.437l.648-3.775L3,6.989l3.792-.554Z" transform="translate(-2.5 -2.5)" fill="none" stroke="#384145" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
                     </svg>
-                    ჩვენ შესახებ
+                 @lang('front.about_us')
                 </h2>
 
                 <div class="about-us__wrapper">

@@ -12,6 +12,12 @@ use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\ServiceController;
+use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\VacancyController;
+use App\Http\Controllers\Front\AboutController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -149,5 +155,14 @@ Route::group([
     });
 
     Route::get('/',[HomeController::class,'index'])->name('homePage');
+    Route::get('/contact',[ContactController::class,'index'])->name('contactPage');
+    Route::get('/service',[ServiceController::class,'index'])->name('servicePage');
+    Route::get('/service/{id}',[ServiceController::class,'index'])->name('serviceDetailPage');
+    Route::get('/about',[AboutController::class,'index'])->name('aboutPage');
+    Route::get('/vacancy',[VacancyController::class,'index'])->name('vacancyPage');
+
+
+
+
 });
 
