@@ -1,11 +1,11 @@
 <!-- header -->
-<header class="header transparent">
+<header class="header {{Request::route()->getName() === 'homePage' ? 'transparent' : ''}}">
 
     <nav class="nav">
 
         <div class="container">
 
-            <a href="" class="brand-logo">
+            <a href="{{route('homePage',app()->getLocale())}}" class="brand-logo">
                 <img class="brand-logo__main" src="/front_assets/img/icons/site-logo.svg" alt="">
                 <div class="brand-logo__secondary">
                     <img src="/front_assets/img/icons/logo-text.svg" alt="">

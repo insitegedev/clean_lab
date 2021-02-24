@@ -1,7 +1,7 @@
 @extends('front.layout.base')
 
 @section('body')
-    <body>
+    <body class="{{Request::route()->getName() === 'homePage' ? 'home' : ''}}">
     @include('front.layout.header')
     @yield('content')
     @include('front.layout.footer')
