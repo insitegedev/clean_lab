@@ -15,7 +15,7 @@ class AddSaleColumnsToProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->boolean('vip')->default(false)->after('slug');
-            $table->boolean('sale')->default(false)->after('price');
+            $table->boolean('sale')->default(false);                                      //->after('price');
             $table->bigInteger('sale_price')->nullable()->after('sale');
         });
     }
@@ -28,7 +28,10 @@ class AddSaleColumnsToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            //
+            $table->dropColumn('vip');
+            $table->dropColumn('sale');
+            $table->dropColumn('sale_price');
+
         });
     }
 }

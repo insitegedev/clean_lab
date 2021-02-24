@@ -13,14 +13,17 @@ class CreateProductFeaturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_features', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('feature_id')->constrained('features')->onDelete('cascade');
-            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
-            $table->index(['feature_id', 'product_id']);
-            $table->timestamps();
-        });
-    }
+//        if (!Schema::hasTable('product_features')) {
+
+            Schema::create('product_features', function (Blueprint $table) {
+                $table->id();
+                $table->foreignId('feature_id')->constrained('features')->onDelete('cascade');
+                $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+                $table->index(['feature_id', 'product_id']);
+                $table->timestamps();
+            });
+        }
+
 
     /**
      * Reverse the migrations.

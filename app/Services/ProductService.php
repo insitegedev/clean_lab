@@ -59,17 +59,17 @@ class ProductService
             $data = $data->where('id',$request->id);
         }
 
-//        if ($request->title) {
-//            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
-//                $query->where('title','like',"%{$request->title}%")->where('language_id',$localizationID);
-//            });
-//        }
+        if ($request->title) {
+            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
+                $query->where('title','like',"%{$request->title}%")->where('language_id',$localizationID);
+            });
+        }
 
-//        if ($request->description) {
-//            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
-//                $query->where('description','like',"%{$request->description}%")->where('language_id',$localizationID);
-//            });
-//        }
+        if ($request->description) {
+            $data = $data->with('language')->whereHas('language', function ($query) use ($localizationID, $request) {
+                $query->where('description','like',"%{$request->description}%")->where('language_id',$localizationID);
+            });
+        }
 
         if ($request->slug) {
             $data = $data->where('slug', 'like', "%{$request->slug}%");
