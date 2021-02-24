@@ -2,7 +2,7 @@
 /**
  *  app/Http/View/Composers/SettingComposer.php
  *
- * User: 
+ * User:
  * Date-Time: 23.02.21
  * Time: 17:59
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
@@ -26,6 +26,11 @@ class SettingComposer
     public function compose(View $view)
     {
         $view->with('address', $this->getValue('address'));
+        $view->with('phone', $this->getValue('phone'));
+        $view->with('contact_email', $this->getValue('contact_email'));
+        $view->with('facebook', $this->getValue('facebook'));
+        $view->with('instagram', $this->getValue('instagram'));
+
     }
 
     // return available language value

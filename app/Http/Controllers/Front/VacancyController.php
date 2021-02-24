@@ -22,6 +22,6 @@ class VacancyController extends FrontController
     {
         $localization = Localization::getIdByName($lang);
         $data = Setting::with(['language','availableLanguage'])->get();
-        return view('front.vacancy.vacancy', ['phone' => $phone,'address' => $address,'instagram' => $instagram,'facebook' => $facebook , 'email' => $email]);
+        return view('front.vacancy.vacancy', ['data' => $data]);
     }
 }

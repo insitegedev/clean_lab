@@ -48,43 +48,28 @@
                 <h2 class="footer__title">@lang('front.contact')</h2>
 
                 <div class="footer__info">
-                    @foreach($data as $item)
-                        @foreach ($item->availableLanguage as $value)
-                            @if($item['key'] == 'address')
                     <div class="col">
                         <p>
                             <img src="/front_assets/img/icons/svg-pin.svg" alt="">
-                            {{$value->value}}
+                            {{$address}}
                         </p>
                         <a href="">
                             <img src="/front_assets/img/icons/svg-pin.svg" alt="">
                             რუკაზე ნახვა
                         </a>
                     </div>
-                            @endif
-                        @endforeach
-                    @endforeach
-                        @foreach($data as $item)
-                            @foreach ($item->availableLanguage as $value)
-                                @if($item['key'] == 'phone')
                     <div class="col">
                         <p>
                             <img src="/front_assets/img/icons/svg-phone.svg" alt="">
-                          {{$value->value}}
-
+                          {{$phone}}
                         </p>
-                        @endif
-                        @if($item['key'] == 'contact_email')
                         <p>
                             <img src="/front_assets/img/icons/svg-mail.svg" alt="">
-                          {{$value->value}}
-
+                          {{$contact_email}}
                         </p>
 
                     </div>
-                                @endif
-                            @endforeach
-                        @endforeach
+
                 </div>
 
             </div>
