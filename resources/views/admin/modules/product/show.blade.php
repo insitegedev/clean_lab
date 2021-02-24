@@ -11,42 +11,20 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
-                                <td>
-                                    {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->title : ''}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Description</th>
-                                <td>
-                                    {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->description : ''}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Content</th>
-                                <td>
-                                    {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->content : ''}}
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Position</th>
-                                <td>{{$product->position}}</td>
-                            </tr>
-                            <tr>
                                 <th>Slug</th>
-                                <td>{{$product->slug}}</td>
+                                <td>
+                                    {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->slug : ''}}
+                                </td>
                             </tr>
                             <tr>
-                                <th>Price</th>
-                                <td>{{$product->price}}</td>
+                                <th>Youtube Url</th>
+                                <td>
+                                    {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->youtube_url : ''}}
+                                </td>
                             </tr>
                             <tr>
                                 <th>Status</th>
                                 <td>{{$product->status ? 'True' : 'False'}}</td>
-                            </tr>
-                            <tr>
-                                <th>Release Date</th>
-                                <td>{{\Carbon\Carbon::parse($product->release_date)}}</td>
                             </tr>
                             </tbody>
                         </table>

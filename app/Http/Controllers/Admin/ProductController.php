@@ -36,9 +36,9 @@ class ProductController extends AdminController
         $products = $this->service->getAll($lang, $request);
         $features = $this->service->features();
         $localization = $this->service->getlocale($lang);
-        $minprice = $this->service->minprice();
-        $maxprice = $this->service->maxprice();
-        return view('pages.products', compact('products', 'localization', 'features' , 'minprice', 'maxprice'));
+//        $minprice = $this->service->minprice();
+//        $maxprice = $this->service->maxprice();
+        return view('pages.products', compact('products', 'localization', 'features'));
     }
 
     /**
@@ -50,9 +50,8 @@ class ProductController extends AdminController
     {
         $request->validate([
             'id' => 'integer|nullable',
-            'title' => 'string|max:255|nullable',
-            'description' => 'string|max:255|nullable',
             'slug' => 'string|max:255|nullable',
+            'youtube_url' => 'url|nullable',
             'status' => 'boolean|nullable',
         ]);
         return view('admin.modules.product.index', [

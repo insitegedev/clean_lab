@@ -34,22 +34,6 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::text('title',Request::get('title'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('title'))
-                        <span class="help-block">
-                        {{ $errors->first('title') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
-                    {{ Form::text('description',Request::get('description'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('description'))
-                        <span class="help-block">
-                        {{ $errors->first('description') }}
-                        </span>
-                    @endif
-                </th>
-                <th>
                     {{ Form::text('slug',Request::get('slug'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
                     @if ($errors->has('slug'))
                         <span class="help-block">
@@ -58,15 +42,31 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::select('status',['' => 'All','1' => 'Active','0' => 'Not Active'],Request::get('status'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('status'))
+                    {{ Form::text('youtube_url',Request::get('youtube_url'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('youtube_url'))
                         <span class="help-block">
-                        {{ $errors->first('status') }}
+                        {{ $errors->first('youtube_url') }}
                         </span>
                     @endif
                 </th>
-                <th></th>
-            </tr>
+{{--                <th>--}}
+{{--                    {{ Form::text('slug',Request::get('slug'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}--}}
+{{--                    @if ($errors->has('slug'))--}}
+{{--                        <span class="help-block">--}}
+{{--                        {{ $errors->first('slug') }}--}}
+{{--                        </span>--}}
+{{--                    @endif--}}
+{{--                </th>--}}
+{{--                <th>--}}
+{{--                    {{ Form::select('status',['' => 'All','1' => 'Active','0' => 'Not Active'],Request::get('status'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}--}}
+{{--                    @if ($errors->has('status'))--}}
+{{--                        <span class="help-block">--}}
+{{--                        {{ $errors->first('status') }}--}}
+{{--                        </span>--}}
+{{--                    @endif--}}
+{{--                </th>--}}
+{{--                <th></th>--}}
+{{--            </tr>--}}
             </thead>
             {!! Form::close() !!}
             <tbody>
@@ -74,8 +74,8 @@
                 @foreach($products as $product)
                     <tr>
                         <td class="text-left">{{$product->id}}</td>
-                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->title : ''}}</td>
-                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->description : ''}}</td>
+                        <td class="text-center">{{$product->slug}}</td>
+                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->youtube_url : ''}}</td>
                         <td class="text-center">{{$product->slug}}</td>
                         <td class="text-center">
                             @if($product->status)

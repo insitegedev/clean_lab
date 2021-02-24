@@ -15,6 +15,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
         <link href="/favicon.ico" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
+        <link rel="icon" type="image/png" href="/front_assets/img/icons/site-logo.svg">
     <link href="{{asset('../adm/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('../adm/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
     <link href="{{asset('../adm/bower_components/dropzone/dist/dropzone.css')}}" rel="stylesheet">
@@ -25,12 +26,13 @@
     <link href="{{asset('../adm/bower_components/slick-carousel/slick/slick.css')}}" rel="stylesheet">
     <link href="{{asset('../adm/css/main.css?version=4.4.0')}}" rel="stylesheet">
     <link href="{{asset('../adm/css/fonts.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="/front_assets/css/main.css">
 
-    {{--         Import Custom css.--}}
+
+        {{--         Import Custom css.--}}
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
 </head>
 <body class="auth-wrapper">
-@yield('body')
 </body>
 </html>
