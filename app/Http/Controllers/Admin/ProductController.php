@@ -65,14 +65,11 @@ class ProductController extends AdminController
      * Show the form for creating a new resource.
      *
      * @return Response
+     * @return Application|Factory|View|Response
      */
-    public function create()
+    public function create(string $locale)
     {
-        $features = Feature::all();
-
-        return view('admin.modules.product.create',[
-            'features' => $features
-        ]);
+        return view('admin.modules.product.create',['locale'=>$locale]);
     }
 
     /**
@@ -105,7 +102,7 @@ class ProductController extends AdminController
         $localization = $this->service->getlocale($locale);
         $lastAdded = Product::inRandomOrder()->where('id' ,'!=',$id)->limit(5)->get();
 
-        return view('pages.product_details', compact('product', 'localization','lastAdded'));
+        return view('admin.modules.product.show', compact('product', 'localization','lastAdded'));
     }
 
     /**
@@ -118,13 +115,8 @@ class ProductController extends AdminController
     public function edit(string $locale, int $id)
     {
         $product = $this->service->find($id);
-        $productAnswers = $product->answers()->select('answer_id')->get()->toArray();
-        $features = Feature::all();
-
         return view('admin.modules.product.update',[
             'product' => $product,
-            'features' =>$features,
-            'productAnswers' => $productAnswers,
         ]);
     }
 

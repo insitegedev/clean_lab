@@ -19,8 +19,10 @@
             <tr>
                 <th>{{__('admin.product.id')}}</th>
                 <th>{{__('admin.product.title')}}</th>
-                <th>{{__('admin.product.description')}}</th>
+                <th>{{__('admin.product.youtube_url')}}</th>
                 <th>{{__('admin.product.slug')}}</th>
+                <th>{{__('admin.product.description')}}</th>
+                <th>{{__('admin.product.content')}}</th>
                 <th>{{__('admin.product.status')}}</th>
                 <th>{{__('admin.actions')}}</th>
             </tr>
@@ -42,10 +44,10 @@
                     @endif
                 </th>
                 <th>
-                    {{ Form::text('description',Request::get('description'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
-                    @if ($errors->has('description'))
+                    {{ Form::text('youtube_url',Request::get('youtube_url'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('youtube_url'))
                         <span class="help-block">
-                        {{ $errors->first('description') }}
+                        {{ $errors->first('youtube_url') }}
                         </span>
                     @endif
                 </th>
@@ -54,6 +56,22 @@
                     @if ($errors->has('slug'))
                         <span class="help-block">
                         {{ $errors->first('slug') }}
+                        </span>
+                    @endif
+                </th>
+                <th>
+                    {{ Form::text('description',Request::get('description'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('description'))
+                        <span class="help-block">
+                        {{ $errors->first('description') }}
+                        </span>
+                    @endif
+                </th>
+                <th>
+                    {{ Form::text('content',Request::get('content'),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
+                    @if ($errors->has('content'))
+                        <span class="help-block">
+                        {{ $errors->first('content') }}
                         </span>
                     @endif
                 </th>
@@ -74,9 +92,12 @@
                 @foreach($products as $product)
                     <tr>
                         <td class="text-left">{{$product->id}}</td>
-                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->title : ''}}</td>
-                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->description : ''}}</td>
+                        <td class="text-left">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->title : ''}}</td>
+                        <td class="text-center">{{$product->youtube_url}}</td>
                         <td class="text-center">{{$product->slug}}</td>
+                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->description : ''}}</td>
+                        <td class="text-center">{{(count($product->availableLanguage) > 0) ?  $product->availableLanguage[0]->content : ''}}</td>
+
                         <td class="text-center">
                             @if($product->status)
                                 <span class="text-green">Active</span>

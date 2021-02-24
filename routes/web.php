@@ -106,7 +106,7 @@ Route::group([
             Route::resource('products', ProductController::class)
                 ->name('index', 'productIndex')
                 ->name('create', 'productCreateView')
-                ->name('store', 'productCreate')
+                ->name('store', 'productStore')
                 ->name('edit', 'productEditView')
                 ->name('update', 'productUpdate')
                 ->name('destroy', 'productDestroy')

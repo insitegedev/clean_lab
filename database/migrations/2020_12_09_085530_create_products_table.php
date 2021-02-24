@@ -15,11 +15,9 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('release_date')->nullable();
-            $table->string('position')->nullable();
-            $table->boolean('status')->default(true);
-            $table->string('slug')->nullable();   
-            $table->bigInteger('price'); 
+            $table->boolean('status');
+            $table->string('slug')->unique();
+            $table->string('youtube_url')->nullable();
             $table->timestamps();
         });
     }

@@ -24,7 +24,6 @@ class SetLocale
 
         $localization = Localization::where('abbreviation', $locale)->first();
         $defaultLocale = Localization::where('default', true)->first();
-
         if ($localization == null) {
             if (strlen($locale) === 2) {
                 array_shift($segments);
