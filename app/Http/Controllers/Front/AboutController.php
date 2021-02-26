@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Localization;
+use App\Models\Page;
 use App\Models\Setting;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -20,9 +21,14 @@ class AboutController extends FrontController
      */
     public function index(string $lang)
     {
-        $localization = Localization::getIdByName($lang);
-        $data = Setting::with(['language','availableLanguage'])->get();
-        return view('front.about.about-us',['data' => $data]);
+        $page = Page::where(['status' => true, 'slug' => 'about-us'])->first();
+        if (!$page) {
+            return abort('404');
+        }
+
+        return view('front.about.about-us',[
+            'page' => $page]
+        );
     }
 }
 
