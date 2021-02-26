@@ -39,7 +39,7 @@ class ContactEmail extends Mailable
     {
         $mailTo = Setting::where(['key' => 'contact_email'])->first();
         if (count($mailTo->availableLanguage) > 0) {
-            return $this->from($mailTo->availableLanguage[0]->value, $this->data['full_name'])->subject($this->data['subject'])->view('email.contact', ['data' => $this->data]);
+            return $this->from($mailTo->availableLanguage[0]->value, $this->data['full_name'])->subject($this->data['subject'])->view('front.email.contact', ['data' => $this->data]);
 
         }
 
