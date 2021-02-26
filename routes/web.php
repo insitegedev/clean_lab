@@ -155,9 +155,9 @@ Route::group([
     });
 
     Route::get('/',[HomeController::class,'index'])->name('homePage');
-    Route::get('/contact',[ContactController::class,'index'])->name('contactPage');
-    Route::get('/service',[ServiceController::class,'index'])->name('servicePage');
-    Route::get('/service/{id}',[ServiceController::class,'index'])->name('serviceDetailPage');
+    Route::match(['get','post'],'/contact',[ContactController::class,'index'])->name('contactPage');
+    Route::get('/services',[ServiceController::class,'index'])->name('servicePage');
+    Route::get('/services/{slug}',[ServiceController::class,'show'])->name('serviceDetailPage');
     Route::get('/about',[AboutController::class,'index'])->name('aboutPage');
     Route::get('/vacancy',[VacancyController::class,'index'])->name('vacancyPage');
 
