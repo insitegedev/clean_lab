@@ -21,19 +21,14 @@ class LanguageSeeder extends Seeder
         App::setLocale($locale);
         $localization = Localization::where('abbreviation',$locale)->first();
         $files = [
-            'admin',
-            'answer',
-            'auth',
-            'feature',
-            'file',
-            'language',
-            'localization',
-            'news',
             'pagination',
             'passwords',
-            'product',
-            // 'validation', 
-            'user'];
+            'validation',
+            'auth',
+            'admin',
+            'front',
+
+        ];
         
        foreach ($files as $file) {
         $array = Lang::get($file);
