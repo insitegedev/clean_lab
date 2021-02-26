@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Front;
 
 use App\Models\Localization;
+use App\Models\Page;
+use App\Models\Product;
 use App\Models\Setting;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Response;
 
 class ServiceController extends FrontController
@@ -20,21 +22,36 @@ class ServiceController extends FrontController
      */
     public function index(string $lang)
     {
-        $localization = Localization::getIdByName($lang);
-        $data = Setting::with(['language','availableLanguage'])->get();
+        $page = Page::where(['status' => true, 'slug' => 'services'])->first();
+        if (!$page) {
+            return abort('404');
+        }
 
-        return view('front.service.services', ['data' => $data]);
+        $products = Product::where('status',true)->orderBy('id', 'DESC')->get();
+
+        return view('front.service.services', [
+            'products' => $products
+        ]);
     }
 
     /**
      * Show specified view.
      *
      * @param string $lang
+     * @param string $slug
      *
      * @return Application|Factory|View|Response
      */
-    public function details(string $lang,$id)
+    public function show(string $lang, string $slug)
     {
-        return view('front.service.service-details');
+        $page = Page::where(['status' => true, 'slug' => 'service-detail'])->first();
+        if (!$page) {
+            return abort('404');
+        }
+        $product = Product::where(['status' => true,'slug' => $slug])->first();
+
+        return view('front.service.service-details',[
+            'product' => $product
+        ]);
     }
 }

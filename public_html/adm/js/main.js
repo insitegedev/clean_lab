@@ -208,6 +208,15 @@ $(function () {
   if ($('#ckeditor1').length) {
     CKEDITOR.replace('ckeditor1');
   }
+  if ($('#ckeditor2').length) {
+    CKEDITOR.replace('ckeditor2');
+  }
+  if ($('#ckeditor3').length) {
+    CKEDITOR.replace('ckeditor3');
+  }
+  if ($('#ckeditor4').length) {
+    CKEDITOR.replace('ckeditor4');
+  }
 
   // #10. CHARTJS CHARTS http://www.chartjs.org/
 

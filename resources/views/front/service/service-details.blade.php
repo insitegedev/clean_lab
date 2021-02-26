@@ -1,66 +1,37 @@
 @extends('front.layout.main')
+    <title>Clean Lub{{(count($product->availableLanguage) > 0) ? ' - '.$product->availableLanguage[0]->title : ''}}</title>
 @section('content')
     <main>
         <!-- section 1 - main -->
         <section class="details">
-           <div class="container">
-               <div class="details__hero">
-                    <img class="img-cover" src="/front_assets/img/service-details-1.png" alt="">
-               </div>
+            <div class="container">
+                @if(count($product->files) > 1)
+                    <div class="details__hero">
+                        <img class="img-cover"
+                             src="{{asset('../storage/product/'.$product->id.'/'.$product->files[1]->name)}}" alt="">
+                    </div>
+                @endif
 
-               <h2 class="details__title">
-                    <span class="flex-center icon">
-                        <img src="/front_assets/img/icons/service-3.svg" alt="">
+
+                <h2 class="details__title">
+                    @if(count($product->files) > 0)
+                        <span class="flex-center icon">
+                        <img src="{{asset('../storage/product/'.$product->id.'/'.$product->files[0]->name)}}" alt="">
                     </span>
-                    სანიტარული მომსახურება
-               </h2>
+                    @endif
+                    {{count($product->availableLanguage) > 0 ? $product->availableLanguage[0]->title : ''}}
+                </h2>
 
-               <div class="details__main">
-                   <p>ლორემ იპსუმ გამკეთებელს მტრები მუდმივ ბეღელში მიკეთია დავჩუმებულვარ გამოლაპარაკება შემოაპარაბდა გადმოიცქირებიან ვერცხლეულობაც, უჭირს შევქმნათ. შეშინებულებმა ყოფნისა წუხილისა, საქნელია გერმანისტები, მესვეურებს არაჟანი. დასიცხულ ბობოლა შეჰყურებდნენ მომხარშონ ჩამოტანილი წინაპარია გერმანისტები სოფელს დაგცხო პატრიოტივით გასწვედა აფორმებს, შევყევი თიშავ შესრულების. ღალატისთვის თესვას გამოლაპარაკება მიპოვე გამოცოცხლდა, აფორმებს მომხსნით დამიკრიბონ. პიესისათვის ჟღალს ზანგივით მომხარშონ ტექსტს შესრულების. სპონტანურს სულების ზინაიდა დავჩუმებულვარ ეკამათებოდა შევყევი. დავითს უთვალტანო ბრაზისაგან სრულიო ორჯერადი, სოფელს, დავჩუმებულვარ განწმენდილი, ბობოლა ვერცხლეულობაც იუდა მომხარშონ შეშინებულებმა. უჭირს ვერცხლეულობაც სასიკვდილოდ ტექსტს აგეყოლიათ ოლოდ, განწმენდილი გავიხსენებთ აეწივნა. წწერა ჩამოტანილი იუდა მტვრევა მესვეურებს ჯემი ოლოდ, მაინცდამაინც ტელევიზორებიც. დაადებდნენ წინაპარია ტკივილები ზანგივით ჩაივლიდა რაზმის სპარტაკიადად სოფელს გასწვედა ყვავილივით პიესისათვის.</p>
+                <div class="details__main">
+                    {!! (count($product->availableLanguage) > 0 ? $product->availableLanguage[0]->content : '') !!}
+                    @if($product->youtube_url)
+                        <iframe width="420" height="345" src="https://www.youtube.com/embed/{{$product->youtube_url}}">
+                        </iframe>
+                    @endif
 
-                   <div class="details__main-bot">
-                       <div class="details__main-bot--video">
-                            <img class="img-cover" src="/front_assets/img/service-img-3.png" alt="">
-
-                            <div class="overlay flex-center">
-                                <button class="video-modal-btn flex-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20.679" height="23.634" viewBox="0 0 20.679 23.634">
-                                        <path id="Icon_awesome-play" data-name="Icon awesome-play" d="M19.59,9.911,3.342.305A2.2,2.2,0,0,0,0,2.212V21.419a2.214,2.214,0,0,0,3.342,1.906l16.248-9.6A2.213,2.213,0,0,0,19.59,9.911Z" transform="translate(0 -0.002)"/>
-                                      </svg>
-                                </button>
-                            </div>
-
-                       </div>
-
-                       <div class="details__main-bot--texts">
-                           <p>
-                            ლორემ იპსუმ გამკეთებელს მტრები მუდმივ ბეღელში მიკეთია დავჩუმებულვარ გამოლაპარაკება შემოაპარაბდა გადმოიცქირებიან ვერცხლეულობაც, უჭირს შევქმნათ. შეშინებულებმა ყოფნისა წუხილისა, საქნელია გერმანისტები, მესვეურებს არაჟანი. დასიცხულ ბობოლა შეჰყურებდნენ მომხარშონ ჩამოტანილი წინაპარია გერმანისტები სოფელს დაგცხო პატრიოტივით გასწვედა აფორმებს, შევყევი თიშავ შესრულების. ღალატისთვის თესვას გამოლაპარაკება მიპოვე გამოცოცხლდა, აფორმებს მომხსნით დამიკრიბონ. პიესისათვის ჟღალს ზანგივით მომხარშონ ტექსტს შესრულების. სპონტანურს სულების ზინაიდა დავჩუმებულვარ ეკამათებოდა შევყევი. დავითს უთვალტანო ბრაზისაგან სრულიო ორჯერადი, სოფელს, დავჩუმებულვარ განწმენდილი, ბობოლა ვერცხლეულობაც იუდა მომხარშონ შეშინებულებმა. უჭირს ვერცხლეულობაც სასიკვდილოდ ტექსტს აგეყოლიათ ოლოდ, განწმენდილი გავიხსენებთ აეწივნა. წწერა ჩამოტანილი იუდა მტვრევა მესვეურებს ჯემი ოლოდ, მაინცდამაინც ტელევიზორებიც. დაადებდნენ წინაპარია ტკივილები ზანგივით ჩაივლიდა რაზმის სპარტაკიადად სოფელს გასწვედა ყვავილივით პიესისათვის.
-                           </p>
-
-                           <p>
-                            ლორემ იპსუმ გამკეთებელს მტრები მუდმივ ბეღელში მიკეთია დავჩუმებულვარ გამოლაპარაკება შემოაპარაბდა გადმოიცქირებიან ვერცხლეულობაც, უჭირს შევქმნათ. შეშინებულებმა ყოფნისა წუხილისა, საქნელია გერმანისტები, მესვეურებს არაჟანი. დასიცხულ ბობოლა შეჰყურებდნენ მომხარშონ ჩამოტანილი წინაპარია გერმანისტები სოფელს დაგცხო პატრიოტივით გასწვედა აფორმებს, შევყევი თიშავ შესრულების.
-                           </p>
-                       </div>
-
-                   </div>
-               </div>
-           </div>
-        </section>
-
-
-        <!-- video modal -->
-        <div class="video-modal flex-center">
-
-            <div class="video-modal__content">
-                <button class="video-modal-close">
-                    <span>&times;</span>
-                </button>
-
-                <iframe id="video1" width="100%" height="100%" src="https://www.youtube.com/embed/yAoLSRbwxL8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                </div>
             </div>
-        </div>
-        @endsection
+        </section>
     </main>
 
-
-</html>
+@endsection

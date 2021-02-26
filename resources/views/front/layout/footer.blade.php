@@ -9,27 +9,27 @@
                 <div class="footer__services">
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        დასუფთავება
+                        {{__('front.service_1')}}
                     </p>
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        <span> სერვისის დასახელება</span>
+                        {{__('front.service_2')}}
                     </p>
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        სერვისის დასახელება
+                        {{__('front.service_3')}}
                     </p>
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        სერვისის დასახელება
+                        {{__('front.service_4')}}
                     </p>
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        სერვისის დასახელება 5
+                        {{__('front.service_5')}}
                     </p>
                     <p>
                         <img src="/front_assets/img/icons/check-dark.svg" alt="">
-                        სერვისის დასახელება
+                        {{__('front.service_6')}}
                     </p>
                 </div>
             </div>
@@ -53,10 +53,6 @@
                             <img src="/front_assets/img/icons/svg-pin.svg" alt="">
                             {{$address}}
                         </p>
-                        <a href="">
-                            <img src="/front_assets/img/icons/svg-pin.svg" alt="">
-                            რუკაზე ნახვა
-                        </a>
                     </div>
                     <div class="col">
                         <p>
