@@ -33,7 +33,11 @@ class LocaleFileService
     // Read and Check if directory not exist after automatic Create.
     private function read()
     {
+        $langDirectory = base_path().'/resources/lang';
         $directory = base_path().'/resources/lang/'.$this->lang;
+        if (!file_exists($langDirectory)) {
+            mkdir($langDirectory,0777,false);
+        }
         if (!file_exists($directory)) {
             mkdir($directory,0777,false);
         }
