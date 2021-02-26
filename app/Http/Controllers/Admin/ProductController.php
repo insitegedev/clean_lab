@@ -31,15 +31,6 @@ class ProductController extends AdminController
         $this->service = $service;
     }
 
-    public function render(string $lang, Request $request){
-
-        $products = $this->service->getAll($lang, $request);
-        $features = $this->service->features();
-        $localization = $this->service->getlocale($lang);
-        $minprice = $this->service->minprice();
-        $maxprice = $this->service->maxprice();
-        return view('pages.products', compact('products', 'localization', 'features' , 'minprice', 'maxprice'));
-    }
 
     /**
      * Display a listing of the resource.
@@ -64,14 +55,12 @@ class ProductController extends AdminController
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
-        $features = Feature::all();
 
         return view('admin.modules.product.create',[
-            'features' => $features
         ]);
     }
 
@@ -85,10 +74,10 @@ class ProductController extends AdminController
     public function store(string $locale, ProductRequest $request)
     {
         if (!$this->service->store($locale,$request)) {
-            return redirect(route('productCreateView',$locale))->with('danger', 'Product does not create.');
+            return redirect(route('productCreateView',$locale))->with('danger', 'Service does not create.');
         }
 
-        return redirect(route('productIndex', $locale))->with('success', 'Product create successfully.');
+        return redirect(route('productIndex', $locale))->with('success', 'Service create successfully.');
 
     }
 
@@ -102,10 +91,7 @@ class ProductController extends AdminController
     public function show(string $locale, int $id)
     {
         $product = $this->service->find($id);
-        $localization = $this->service->getlocale($locale);
-        $lastAdded = Product::inRandomOrder()->where('id' ,'!=',$id)->limit(5)->get();
-
-        return view('pages.product_details', compact('product', 'localization','lastAdded'));
+        return view('admin.modules.product.show', compact('product'));
     }
 
     /**
