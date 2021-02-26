@@ -36,7 +36,6 @@ class PageRequest extends FormRequest
             'meta_title' => 'required|string|max:255',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string',
-            'slug' => ['required', Rule::unique('pages', 'slug')->ignore($this->page)],
         ];
     }
 }

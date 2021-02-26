@@ -126,7 +126,6 @@ class PageService
         $request['status'] = isset($request['status']) ? 1 : 0;
         $data = $this->find($id);
         $data->update([
-            'slug' => $request['slug'],
             'status' => $request['status']
         ]);
 

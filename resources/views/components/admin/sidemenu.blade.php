@@ -26,7 +26,7 @@
                     <div class="icon-w">
                         <div class="os-icon os-icon-life-buoy"></div>
                     </div>
-                    <span>{{__('admin.products')}}</span></a>
+                    <span>{{__('admin.services')}}</span></a>
             </li>
             <li class="">
                 <a href="{{route('localizationIndex',app()->getLocale() )}}">
