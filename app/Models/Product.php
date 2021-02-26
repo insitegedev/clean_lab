@@ -9,14 +9,9 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'release_date',
-        'position',
         'status',
         'slug',
-        'price',
-        'vip',
-        'sale',
-        'sale_price'
+        'youtube_url'
     ];
     public function files()
     {

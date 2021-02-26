@@ -124,21 +124,14 @@ class ProductService
     public function store(string $lang,ProductRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
-        $request['vip'] = isset($request['vip']) ? 1 : 0;
-        $request['sale'] = isset($request['sale']) ? 1 : 0;
 
         $localizationID = Localization::getIdByName($lang);
 
 
         $this->model = $this->model->create([
-            'release_date' => Carbon::parse($request['release_date']),
-            'position' => $request['position'],
             'status' => $request['status'],
             'slug' => $request['slug'],
-            'price' => $request['price']*100,
-            'vip' => $request['vip'],
-            'sale' => $request['sale'],
-            'sale_price' => $request['sale_price']*100
+            'youtube_url' => $request['youtube_url']
         ]);
 
         $this->model->language()->create([
@@ -149,28 +142,6 @@ class ProductService
             'content' => $request['content'],
         ]);
 
-        if ($request['features'] != null) {
-
-            if (count($request['features']) > 0) {
-
-                foreach ($request['features'] as $key => $feature) {
-                    if(count($feature)> 0) {
-                        $this->model->features()->create([
-                            'feature_id' => $key,
-                            'product_id' => $this->model->id
-                        ]);
-
-                        foreach ($feature as $answer) {
-                            $this->model->answers()->create([
-                               'product_id' => $this->model->id,
-                               'feature_id' => $key,
-                               'answer_id' => $answer
-                            ]);
-                        }
-                    }
-                }
-            }
-        }
 
         $model = $this->model;
 
@@ -201,28 +172,21 @@ class ProductService
     public function update(string $lang,int $id, ProductRequest $request)
     {
         $request['status'] = isset($request['status']) ? 1 : 0;
-        $request['vip'] = isset($request['vip']) ? 1 : 0;
-        $request['sale'] = isset($request['sale']) ? 1 : 0;
-        $localization = $this->getlocale($lang);
+        $localizationID = Localization::getIdByName($lang);
 
         $data = $this->find($id);
 
         $data->update([
-            'release_date' => Carbon::parse($request['release_date']),
-            'position' => $request['position'],
             'status' => $request['status'],
             'slug' => $request['slug'],
-            'price' => $request['price']*100,
-            'vip' => $request['vip'],
-            'sale' => $request['sale'],
-            'sale_price' => $request['sale_price']*100
+            'youtube_url' => $request['youtube_url']
         ]);
-        $productLanguage = ProductLanguage::where(['product_id' => $data->id, 'language_id' => $localization])->first();
+        $productLanguage = ProductLanguage::where(['product_id' => $data->id, 'language_id' => $localizationID])->first();
 
         if ($productLanguage == null) {
             $data->language()->create([
                 'feature_id' => $data->id,
-                'language_id' => $localization,
+                'language_id' => $localizationID,
                 'title' => $request['title'],
                 'description' => $request['description'],
                 'content' => $request['content'],
@@ -232,39 +196,6 @@ class ProductService
             $productLanguage->description = $request['description'];
             $productLanguage->content = $request['content'];
             $productLanguage->save();
-        }
-
-        if (count($data->answers) > 0) {
-            if(!$data->answers()->delete()){
-                throwException('Product Answers can not delete.');
-            }
-        }
-
-        if (count($data->features) > 0) {
-            if(!$data->features()->delete()){
-                throwException('Product Features can not delete.');
-            }
-        }
-
-        if ($request['features'] != null) {
-            if (count($request['features']) > 0) {
-
-                foreach ($request['features'] as $key => $feature) {
-                    if(count($feature)> 0) {
-                        $data->features()->create([
-                            'feature_id' => $key,
-                            'product_id' => $data->id
-                        ]);
-                        foreach ($feature as $answer) {
-                            $data->answers()->create([
-                                'product_id' => $data->id,
-                                'feature_id' => $key,
-                                'answer_id' => $answer
-                            ]);
-                        }
-                    }
-                }
-            }
         }
 
         // Delete product file if deleted in request.
@@ -299,15 +230,8 @@ class ProductService
 
         return true;
     }
-    public function features()
-    {
-        $features = ProductFeatures::select('feature_id')->groupBy('feature_id')->get()->map(function ($feature) {
-            return $feature->feature;
-        });
-        return $features;
-    }
     /**
-     * Create Product item into db.
+     * Delete Product item From db.
      *
      * @param int $id
      * @return bool
@@ -318,18 +242,7 @@ class ProductService
         $data = $this->find($id);
         if (count($data->language) > 0) {
             if(!$data->language()->delete()){
-                throwException('Product languages can not delete.');
-            }
-        }
-        if (count($data->answers) > 0) {
-            if(!$data->answers()->delete()){
-                throwException('Product Answers can not delete.');
-            }
-        }
-
-        if (count($data->features) > 0) {
-            if(!$data->features()->delete()){
-                throwException('Product Features can not delete.');
+                throwException('Service languages can not delete.');
             }
         }
 
@@ -340,17 +253,9 @@ class ProductService
             $data->files()->delete();
         }
         if (!$data->delete()) {
-            throwException('Product  can not delete.');
+            throwException('Service  can not delete.');
         }
         return true;
-    }
-    public function maxprice()
-    {
-        return $this->model::max('price');
-    }
-    public function minprice()
-    {
-        return $this->model::min('price');
     }
     public function getlocale($lang)
     {
