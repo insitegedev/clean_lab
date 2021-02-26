@@ -7,13 +7,14 @@
  * Time: 10:23
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
+
 namespace App\Http\Controllers\Front;
 
-use App\Models\Localization;
-use App\Models\Setting;
+use App\Models\Page;
+use App\Models\Product;
+use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\Response;
 
 class HomeController extends FrontController
@@ -27,8 +28,26 @@ class HomeController extends FrontController
      */
     public function index(string $lang)
     {
-        $localization = Localization::getIdByName($lang);
-        $data = Setting::with(['language','availableLanguage'])->get();
-        return view('front.home.index', ['data' => $data]);
+        $page = Page::where(['status' => true, 'slug' => 'home'])->first();
+        if (!$page) {
+            return abort('404');
+        }
+
+        // Services
+        $products = Product::where('status',true)->get();
+
+        // Sections
+        $whyUs = Page::where(['status' => true, 'slug' => 'why_us'])->first();
+        $howWorks = Page::where(['status' => true, 'slug' => 'how_works'])->first();
+        $cleanLub = Page::where(['status' => true, 'slug' => 'clean_lub'])->first();
+
+        return view('front.home.index', [
+                'page' => $page,
+                'products' => $products,
+                'whyUs' => $whyUs,
+                'howWorks' => $howWorks,
+                'cleanLub' => $cleanLub
+            ]
+        );
     }
 }
