@@ -66,7 +66,7 @@
                                     <div
                                             class="form-group {{ $errors->has('content') ? ' has-error' : '' }}">
                                         {{ Form::label('content', 'Content', []) }}
-                                        {{ Form::textarea('content', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Content']) }}
+                                        {{ Form::textarea('content', '', ['class' => 'form-control', 'no','id'=>'ckeditor1','placeholder'=>'Enter Content']) }}
                                         @if ($errors->has('content'))
                                             <span class="help-block">
                                     {{ $errors->first('content') }}
@@ -80,7 +80,7 @@
                                 <div
                                         class="form-group {{ $errors->has('content_2') ? ' has-error' : '' }}">
                                     {{ Form::label('content_2', 'Content 2', []) }}
-                                    {{ Form::textarea('content_2', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Content 2']) }}
+                                    {{ Form::textarea('content_2', '', ['class' => 'form-control', 'no','id'=>'ckeditor2','placeholder'=>'Enter Content 2']) }}
                                     @if ($errors->has('content_2'))
                                         <span class="help-block">
                                     {{ $errors->first('content_2') }}
@@ -94,7 +94,7 @@
                                 <div
                                         class="form-group {{ $errors->has('content_3') ? ' has-error' : '' }}">
                                     {{ Form::label('content_3', 'Content 3', []) }}
-                                    {{ Form::textarea('content_3', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Content 3']) }}
+                                    {{ Form::textarea('content_3', '', ['class' => 'form-control','id'=>'ckeditor3', 'no','placeholder'=>'Enter Content 3']) }}
                                     @if ($errors->has('content_3'))
                                         <span class="help-block">
                                     {{ $errors->first('content_3') }}
@@ -108,7 +108,7 @@
                                 <div
                                         class="form-group {{ $errors->has('content_4') ? ' has-error' : '' }}">
                                     {{ Form::label('content_4', 'Content 4', []) }}
-                                    {{ Form::textarea('content_4', '', ['class' => 'form-control', 'no','placeholder'=>'Enter Content 4']) }}
+                                    {{ Form::textarea('content_4', '', ['class' => 'form-control','id'=>'ckeditor4', 'no','placeholder'=>'Enter Content 4']) }}
                                     @if ($errors->has('content_4'))
                                         <span class="help-block">
                                     {{ $errors->first('content_4') }}

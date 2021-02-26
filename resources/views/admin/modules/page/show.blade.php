@@ -11,33 +11,33 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title')}}</th>
                                 <td>
                                     {{ (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Meta Title</th>
+                                <th>{{__('admin.meta_title')}}</th>
                                 <td>
                                     {{ (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->meta_title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>{{__('admin.description')}}</th>
                                 <td>
                                     {{ (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->description : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>slug</th>
+                                <th>{{__('admin.slug')}}</th>
                                 <td>{{$page->slug}}</td>
                             </tr>
                             <tr>
-                                <th>Status</th>
-                                <td>{{$page->status ? __('page.on') : __('page.off')}}</td>
+                                <th>{{__('admin.status')}}</th>
+                                <td>{{$page->status ? 'True' : 'False'}}</td>
                             </tr>
                             <tr>
-                                <th>Content</th>
+                                <th>{{__('admin.content')}}</th>
                                 <td>
                                     {{ (count($page->availableLanguage) > 0) ? $page->availableLanguage[0]->content : ''}}
                                 </td>

@@ -11,27 +11,27 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title')}}</th>
                                 <td>{{$localization->title}}</td>
                             </tr>
                             <tr>
-                                <th>Abbreviation</th>
+                                <th>{{__('admin.abbreviation')}}</th>
                                 <td>{{$localization->abbreviation}}</td>
                             </tr>
                             <tr>
-                                <th>Native</th>
+                                <th>{{__('admin.native')}}</th>
                                 <td>{{$localization->native}}</td>
                             </tr>
                             <tr>
-                                <th>Locale</th>
+                                <th>{{__('admin.locale')}}</th>
                                 <td>{{$localization->locale}}</td>
                             </tr>
                             <tr>
-                                <th>Status</th>
+                                <th>{{__('admin.status')}}</th>
                                 <td>{{$localization->status ? 'True' : 'False'}}</td>
                             </tr>
                             <tr>
-                                <th>Default</th>
+                                <th>{{__('admin.default')}}</th>
                                 <td>{{$localization->default ? 'True' : 'False'}}</td>
                             </tr>
 

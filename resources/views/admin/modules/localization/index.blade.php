@@ -4,7 +4,7 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('localizationCreateView',app()->getLocale())}}">@lang('admin.create.localizations')</a>
+                <a class="btn btn-lg btn-success" href="{{route('localizationCreateView',app()->getLocale())}}">@lang('admin.create_localizations')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -17,12 +17,12 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('admin.localization.id')</th>
-                <th>@lang('admin.localization.title')</th>
-                <th>@lang('admin.localization.abbreviation')</th>
-                <th>@lang('admin.localization.native')</th>
-                <th>@lang('admin.localization.locale')</th>
-                <th>@lang('admin.localization.status')</th>
+                <th>@lang('admin.id')</th>
+                <th>@lang('admin.title')</th>
+                <th>@lang('admin.abbreviation')</th>
+                <th>@lang('admin.native')</th>
+                <th>@lang('admin.locale')</th>
+                <th>@lang('admin.status')</th>
                 <th>@lang('admin.actions')</th>
             </tr>
             <tr>

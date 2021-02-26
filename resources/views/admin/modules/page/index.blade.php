@@ -3,10 +3,7 @@
     {!! Form::open(['url' => route('pageIndex',app()->getLocale()),'method' =>'get']) !!}
     <div class="controls-above-table">
         <div class="row">
-{{--            <div class="col-sm-2">--}}
-{{--                <a class="btn btn-lg btn-success" href="{{route('pageCreateView',app()->getLocale())}}">@lang('admin.create_pages')</a>--}}
-{{--            </div>--}}
-            <div class="col-sm-10 per-page-column">
+            <div class="col-sm-12 per-page-column">
                 <div class="per-page-container">
                     {{ Form::select('per_page',[10 => 10,20 => 20,30 => 30,50 => 50,100=>100],(Request::get('per_page') != null ? Request::get('per_page') : 10),  ['class' => 'form-control', 'no','onChange' => 'this.form.submit()']) }}
                 </div>
@@ -17,10 +14,10 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>@lang('admin.page.id')</th>
-                <th>@lang('admin.page.title')</th>
-                <th>@lang('admin.page.slug')</th>
-                <th>@lang('admin.page.status')</th>
+                <th>@lang('admin.id')</th>
+                <th>@lang('admin.title')</th>
+                <th>@lang('admin.slug')</th>
+                <th>@lang('admin.status')</th>
                 <th>@lang('admin.actions')</th>
             </tr>
             <tr>
@@ -69,9 +66,9 @@
                         <td class="text-center">{{$page->slug}}</td>
                         <td class="text-center">
                             @if($page->status)
-                                <span class="text-green">@lang('admin.page.on')</span>
+                                <span class="text-green">@lang('admin.active')</span>
                             @else
-                                <span class="text-red">@lang('admin.page.off')</span>
+                                <span class="text-red">@lang('admin.not_active')</span>
                             @endif
                         </td>
                         <td class="row-actions d-flex">

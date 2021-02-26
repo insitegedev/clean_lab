@@ -4,7 +4,7 @@
     <div class="controls-above-table">
         <div class="row">
             <div class="col-sm-2">
-                <a class="btn btn-lg btn-success" href="{{route('productCreateView',app()->getLocale())}}">@lang('admin.create.products')</a>
+                <a class="btn btn-lg btn-success" href="{{route('productCreateView',app()->getLocale())}}">@lang('admin.create_services')</a>
             </div>
             <div class="col-sm-10 per-page-column">
                 <div class="per-page-container">
@@ -17,11 +17,11 @@
         <table class="table table-bordered table-lg table-v2 table-striped">
             <thead>
             <tr>
-                <th>{{__('admin.product.id')}}</th>
-                <th>{{__('admin.product.title')}}</th>
-                <th>{{__('admin.product.description')}}</th>
-                <th>{{__('admin.product.slug')}}</th>
-                <th>{{__('admin.product.status')}}</th>
+                <th>{{__('admin.id')}}</th>
+                <th>{{__('admin.title')}}</th>
+                <th>{{__('admin.description')}}</th>
+                <th>{{__('admin.slug')}}</th>
+                <th>{{__('admin.status')}}</th>
                 <th>{{__('admin.actions')}}</th>
             </tr>
             <tr>

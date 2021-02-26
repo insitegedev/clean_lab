@@ -11,42 +11,30 @@
                         <table class="table table-striped table-bordered">
                             <tbody>
                             <tr>
-                                <th>Title</th>
+                                <th>{{__('admin.title')}}</th>
                                 <td>
                                     {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->title : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Description</th>
+                                <th>{{__('admin.description')}}</th>
                                 <td>
                                     {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->description : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Content</th>
+                                <th>{{__('admin.content')}}</th>
                                 <td>
                                     {{ (count($product->availableLanguage) > 0) ? $product->availableLanguage[0]->content : ''}}
                                 </td>
                             </tr>
                             <tr>
-                                <th>Position</th>
-                                <td>{{$product->position}}</td>
-                            </tr>
-                            <tr>
-                                <th>Slug</th>
+                                <th>{{__('admin.slug')}}</th>
                                 <td>{{$product->slug}}</td>
                             </tr>
                             <tr>
-                                <th>Price</th>
-                                <td>{{$product->price}}</td>
-                            </tr>
-                            <tr>
-                                <th>Status</th>
+                                <th>{{__('admin.status')}}</th>
                                 <td>{{$product->status ? 'True' : 'False'}}</td>
-                            </tr>
-                            <tr>
-                                <th>Release Date</th>
-                                <td>{{\Carbon\Carbon::parse($product->release_date)}}</td>
                             </tr>
                             </tbody>
                         </table>

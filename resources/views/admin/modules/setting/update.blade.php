@@ -5,7 +5,7 @@
         <div class="col-lg-6">
             <div class="element-wrapper">
                 <h6 class="element-header">
-                    @lang('admin.setting.update')
+                    @lang('admin.setting_update')
                 </h6>
                     <div class="element-box">
                         {!! Form::open(['url' => route('settingUpdate',[app()->getLocale(),$setting->id]),'method' =>'put']) !!}
@@ -13,8 +13,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('key') ? ' has-error' : '' }}">
-                                    {{ Form::label('key', 'Key', []) }}
-                                    {{ Form::text('key', $setting->key, ['class' => 'form-control', 'no','placeholder'=>'Enter Title']) }}
+                                    {{ Form::label('key', __('admin.key'), []) }}
+                                    {{ Form::text('key', $setting->key, ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_key')]) }}
                                     @if ($errors->has('key'))
                                         <span class="help-block">
                                     {{ $errors->first('key') }}
@@ -25,8 +25,8 @@
                             <div class="col-6">
                                 <div
                                     class="form-group {{ $errors->has('value') ? ' has-error' : '' }}">
-                                    {{ Form::label('value', 'Value', []) }}
-                                    {{ Form::text('value', (count($setting->availableLanguage) > 0) ? $setting->availableLanguage[0]->value : '', ['class' => 'form-control', 'no','placeholder'=>'Enter Meta Title']) }}
+                                    {{ Form::label('value', __('admin.value'), []) }}
+                                    {{ Form::text('value', (count($setting->availableLanguage) > 0) ? $setting->availableLanguage[0]->value : '', ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_value')]) }}
                                     @if ($errors->has('value'))
                                         <span class="help-block">
                                             {{ $errors->first('value') }}
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="form-buttons-w">
-                            <button class="btn btn-primary" type="submit"> @lang('admin.setting.update')</button>
+                            <button class="btn btn-primary" type="submit"> @lang('admin.update')</button>
                         </div>
                         {!! Form::close() !!}
                     </div>
