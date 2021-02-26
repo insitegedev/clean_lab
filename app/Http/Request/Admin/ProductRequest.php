@@ -33,8 +33,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'position' => 'required|string|max:255',
-            'price' => 'required|numeric',
+            'youtube_url' => 'nullable|string|max:255',
             'slug' => ['required','alpha_dash', Rule::unique('products', 'slug')->ignore($this->product)],
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096'
         ];
