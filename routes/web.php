@@ -1,15 +1,11 @@
 <?php
 
-use App\Http\Controllers\Admin\AnswerController;
 use App\Http\Controllers\Admin\DictionaryController;
-use App\Http\Controllers\Admin\FeatureController;
-use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\LocalizationController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ServiceController;
@@ -45,12 +41,6 @@ Route::group([
 
         Route::middleware(['auth', 'can:isAdmin'])->group(function () {
 
-//            // Files
-//            Route::get('/files', [FileController::class, 'index'])->name('fileIndex');
-//            Route::get('/files/create', [FileController::class, 'create'])->name('FileCreate');
-//            Route::post('/files/store', [FileController::class, 'store'])->name('FileStore');
-//            Route::get('/removeimage/{file}', [FileController::class, 'remove'])->name('removeImage');
-
             // Localizations
             Route::resource('localizations', LocalizationController::class)
                 ->name('index', 'localizationIndex')
@@ -61,15 +51,7 @@ Route::group([
                 ->name('destroy', 'localizationDestroy')
                 ->name('show', 'localizationShow');
 
-//            // Features
-//            Route::resource('features', FeatureController::class)
-//                ->name('index', 'featureIndex')
-//                ->name('create', 'featureCreateView')
-//                ->name('store', 'featureCreate')
-//                ->name('edit', 'featureEditView')
-//                ->name('update', 'featureUpdate')
-//                ->name('destroy', 'featureDestroy')
-//                ->name('show', 'featureShow');
+
 
             // Language
             Route::resource('languages', DictionaryController::class)
@@ -82,16 +64,7 @@ Route::group([
                 ->name('destroy', 'DictionaryDestroy');
 
             Route::get('language/rescan',[DictionaryController::class,'rescan'])->name('languageScanner');
-//
-//            // Answers
-//            Route::resource('answers', AnswerController::class)
-//                ->name('index', 'AnswerIndex')
-//                ->name('store', 'AnswerStore')
-//                ->name('show', 'AnswerShow')
-//                ->name('create', 'AnswerCreate')
-//                ->name('edit', 'AnswerEdit')
-//                ->name('update', 'AnswerUpdate')
-//                ->name('destroy', 'AnswerDestroy');
+
             // News
             Route::resource('news', NewsController::class)
                 ->name('index', 'NewsIndex')
@@ -112,15 +85,7 @@ Route::group([
                 ->name('destroy', 'productDestroy')
                 ->name('show', 'productShow');
 
-//            // Users
-//            Route::resource('users',UserController::class)
-//                ->name('index', 'userIndex')
-//                ->name('create', 'userCreateView')
-//                ->name('store', 'userCreate')
-//                ->name('edit', 'userEditView')
-//                ->name('update', 'userUpdate')
-//                ->name('destroy', 'userDestroy')
-//                ->name('show', 'userShow');
+
 
             // Pages
             Route::resource('pages', PageController::class)->except('destroy')
@@ -131,17 +96,6 @@ Route::group([
                 ->name('update', 'pageUpdate')
                 ->name('show', 'pageShow');
 
-
-//
-//            // Slider
-//            Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class)
-//                ->name('index', 'slideIndex')
-//                ->name('create', 'slideCreateView')
-//                ->name('store', 'slideCreate')
-//                ->name('edit', 'slideEditView')
-//                ->name('update', 'slideUpdate')
-//                ->name('destroy', 'slideDestroy')
-//                ->name('show', 'slideShow');
 
             // Settings
             Route::resource('settings', SettingController::class)->except('destroy')
