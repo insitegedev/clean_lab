@@ -18,35 +18,31 @@
 
     <!-- regular js-->
     <script src="/front_assets/script/general.js"></script>
-
+    <!-- END: JS Assets-->
+    <div class="fb-customerchat" page_id="6708927376315932">
+    </div>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
-        window.fbAsyncInit = function () {
+        window.fbAsyncInit = function() {
             FB.init({
-                xfbml: true,
-                version: 'v10.0'
+                xfbml            : true,
+                version          : 'v9.0'
             });
         };
-
-        (function (d, s, id) {
+        (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
+            js = d.createElement(s); js.id = id;
             js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+        }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Your Chat Plugin code -->
     <div class="fb-customerchat"
-         attribution="setup_tool"
-         page_id="376359892852239"
-         theme_color="#ffc300"
-         logged_in_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ?"
-         logged_out_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? ">
+         attribution=setup_tool
+         page_id="112139493856645"
+         theme_color="#7363ab">
     </div>
-
     </body>
 @endsection
