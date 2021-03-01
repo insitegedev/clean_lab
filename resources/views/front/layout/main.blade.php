@@ -18,9 +18,7 @@
 
     <!-- regular js-->
     <script src="/front_assets/script/general.js"></script>
-    <!-- END: JS Assets-->
-    <div class="fb-customerchat" page_id="6708927376315932">
-    </div>
+
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
@@ -43,8 +41,9 @@
     <div class="fb-customerchat"
          attribution="setup_tool"
          page_id="376359892852239"
-         logged_in_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? :blush:"
-         logged_out_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? :blush:">
+         logged_in_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? "
+         logged_out_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? ">
     </div>
+
     </body>
 @endsection
