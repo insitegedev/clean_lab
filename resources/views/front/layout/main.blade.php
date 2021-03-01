@@ -42,7 +42,7 @@
     <!-- Your Chat Plugin code -->
     <div class="fb-customerchat"
          attribution="setup_tool"
-         page_id="772438736276304"
+         page_id="112139493856645"
          theme_color="#ffc300"
          logged_in_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ?"
          logged_out_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ?">
