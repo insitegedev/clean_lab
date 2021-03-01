@@ -19,17 +19,17 @@
     <!-- regular js-->
     <script src="/front_assets/script/general.js"></script>
     <!-- END: JS Assets-->
-    <div class="fb-customerchat" page_id="6708927376315932">
-    </div>
+
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
         window.fbAsyncInit = function() {
             FB.init({
                 xfbml            : true,
-                version          : 'v9.0'
+                version          : 'v10.0'
             });
         };
+
         (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
@@ -40,9 +40,11 @@
 
     <!-- Your Chat Plugin code -->
     <div class="fb-customerchat"
-         attribution=setup_tool
-         page_id="112139493856645"
-         theme_color="#7363ab">
+         attribution="setup_tool"
+         page_id="376359892852239"
+         logged_in_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? :blush:"
+         logged_out_greeting="სალამი! მადლობა, რომ დაინტერესდით ჩვენი კომპანიით. რით შეგვიძლია დაგეხმაროთ? :blush:">
     </div>
+
     </body>
 @endsection
