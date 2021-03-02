@@ -37,6 +37,7 @@ class ContactController extends FrontController
                 'message' => 'required|max:1024'
             ]);
 
+
             $data = [
                 'first_name' => $request->first_name,
                 'last_name' => $request->last_name,
@@ -56,6 +57,11 @@ class ContactController extends FrontController
             }
 
         }
+
+        if ($request->ajax()) {
+            return response()->json(['success' => true]);
+        }
+
         return view('front.contact.contact-us', ['page' => $page]);
     }
 }

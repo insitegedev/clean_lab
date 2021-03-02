@@ -64,7 +64,7 @@
 
                     <textarea class="form-field" placeholder="{{__('front.message')}}..." required  name="message" id="" cols="30" rows="10"></textarea>
 
-                    <button class="contact-us__form-submit" type="button">
+                    <button class="contact-us__form-submit" type="submit">
                         {{__('front.send')}}
                     </button>
                 {!! Form::close() !!}

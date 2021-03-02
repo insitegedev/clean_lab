@@ -10,6 +10,7 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
     <meta name="author" content="insite.international">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
 @yield('sub-head')
@@ -18,7 +19,7 @@
     <link rel="icon" type="image/png" href="/front_assets/img/icons/site-logo.svg">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/front_assets/css/main.css?v=3">
+    <link rel="stylesheet" href="/front_assets/css/main.css?v=5">
 
     <!-- END: CSS Assets-->
 </head>
