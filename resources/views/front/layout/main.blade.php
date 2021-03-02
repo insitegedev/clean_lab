@@ -5,7 +5,11 @@
     @include('front.layout.header')
     @yield('content')
     @include('front.layout.footer')
-
+    <a class="fixedButton" href="tel:{{$phone}}">
+        <div class="roundedFixedBtn">
+            <img class="call-button" src="/front_assets/img/phone.jpg" alt="call">
+        </div>
+    </a>
     <!-- BEGIN: JS Assets-->
     <!-- third-p js-->
     <script
