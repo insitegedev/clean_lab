@@ -2762,8 +2762,9 @@ p {
 .fixedButton{
   position: fixed;
   bottom: 0px;
-  right: 0px;
-  padding: 20px;
+  right: 90px;
+  padding: 24px;
+  z-index: 9;
 }
 .roundedFixedBtn{
   height: 60px;
