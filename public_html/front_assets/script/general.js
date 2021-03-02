@@ -204,7 +204,8 @@ window.addEventListener('click', function (e) {
 
 $(window).on('load', function () {
     let contactFormCookie = $.cookie('contactFormCookie')
-    if (!contactFormCookie) {
+    let currentUrl = window.location.href;
+    if (!contactFormCookie && !currentUrl.includes('/contact')) {
         setTimeout(function () {
             $('.form-modal').addClass('shown')
         }, 30 * 1000);
