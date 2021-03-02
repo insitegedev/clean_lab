@@ -8,7 +8,7 @@
     <!-- form modal-->
     <div class="form-modal flex-center">
         <form class="form-modal__form" id="contact-form">
-            <button class="form-modal__form-close">
+            <button type="button" class="form-modal__form-close">
                 <span>×</span>
             </button>
 
