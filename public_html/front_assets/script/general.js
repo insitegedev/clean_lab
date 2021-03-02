@@ -162,7 +162,7 @@ $('.contact-us__form-submit').on('click', (e) => {
                         if (!contactFormCookie) {
                             // set Cookie expire 1 minute
                             let date = new Date();
-                            date.setTime(date.getTime() + (60 * 1000));
+                            date.setTime(date.getTime() + (60 * 60 * 1000));
                             contactFormCookie = true;
                             $.cookie('contactFormCookie', contactFormCookie, {expires: date});
                         }
