@@ -53,7 +53,7 @@
 
 
     <!-- regular js-->
-    <script src="/front_assets/script/general.js?v=2"></script>
+    <script src="/front_assets/script/general.js?v=10"></script>
     <!-- END: JS Assets-->
 
     <!-- Load Facebook SDK for JavaScript -->
