@@ -35,7 +35,8 @@ class ProductRequest extends FormRequest
             'title' => 'required|string|max:255',
             'youtube_url' => 'nullable|string|max:255',
             'slug' => ['required','alpha_dash', Rule::unique('products', 'slug')->ignore($this->product)],
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096'
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:8192',
+            'position' => 'integer|required'
         ];
     }
 }

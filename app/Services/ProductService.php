@@ -131,7 +131,8 @@ class ProductService
         $this->model = $this->model->create([
             'status' => $request['status'],
             'slug' => $request['slug'],
-            'youtube_url' => $request['youtube_url']
+            'youtube_url' => $request['youtube_url'],
+            'position' => $request['position']
         ]);
 
         $this->model->language()->create([
@@ -179,7 +180,8 @@ class ProductService
         $data->update([
             'status' => $request['status'],
             'slug' => $request['slug'],
-            'youtube_url' => $request['youtube_url']
+            'youtube_url' => $request['youtube_url'],
+            'position' => $request['position']
         ]);
         $productLanguage = ProductLanguage::where(['product_id' => $data->id, 'language_id' => $localizationID])->first();
 

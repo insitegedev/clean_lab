@@ -27,8 +27,7 @@ class ServiceController extends FrontController
             return abort('404');
         }
 
-        $products = Product::where('status',true)->orderBy('id', 'DESC')->get();
-
+        $products = Product::where('status',true)->orderBy('position', 'ASC')->get();
         return view('front.service.services', [
             'products' => $products
         ]);

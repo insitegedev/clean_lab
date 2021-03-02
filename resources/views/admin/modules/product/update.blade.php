@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div
                                         class="form-group {{ $errors->has('title') ? ' has-error' : '' }}">
                                     {{ Form::label('title', __('admin.title'), []) }}
@@ -24,7 +24,7 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-4">
                                 <div
                                         class="form-group {{ $errors->has('slug') ? ' has-error' : '' }}">
                                     {{ Form::label('slug', __('admin.slug'), []) }}
@@ -32,6 +32,18 @@
                                     @if ($errors->has('slug'))
                                         <span class="help-block">
                                             {{ $errors->first('slug') }}
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div
+                                        class="form-group {{ $errors->has('position') ? ' has-error' : '' }}">
+                                    {{ Form::label('position', __('admin.position'), []) }}
+                                    {{ Form::text('position', $product->position, ['class' => 'form-control', 'no','placeholder'=>__('admin.enter_position')]) }}
+                                    @if ($errors->has('position'))
+                                        <span class="help-block">
+                                            {{ $errors->first('position') }}
                                         </span>
                                     @endif
                                 </div>

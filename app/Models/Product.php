@@ -11,7 +11,8 @@ class Product extends Model
     protected $fillable = [
         'status',
         'slug',
-        'youtube_url'
+        'youtube_url',
+        'position'
     ];
     public function files()
     {

@@ -34,7 +34,7 @@ class HomeController extends FrontController
         }
 
         // Services
-        $products = Product::where('status',true)->get();
+        $products = Product::where('status',true)->orderBy('position', 'ASC')->get();
 
         // Sections
         $whyUs = Page::where(['status' => true, 'slug' => 'why_us'])->first();

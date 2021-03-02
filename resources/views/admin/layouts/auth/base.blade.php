@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @hasSection('title')
-
-        <title>@yield('title') - {{ config('app.name') }}</title>
-    @else
-        <title>{{ config('app.name') }}</title>
-    @endif
+    <title>Clean Lab</title>
     <meta charset="utf-8">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <meta content="template language" name="keywords">
     <meta content="Tamerlan Soziev" name="author">
     <meta content="Admin dashboard html template" name="description">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-        <link href="/favicon.ico" rel="shortcut icon">
+    <link href="/favicon.ico" rel="shortcut icon">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet" type="text/css">
     <link href="{{asset('../adm/bower_components/select2/dist/css/select2.min.css')}}" rel="stylesheet">
     <link href="{{asset('../adm/bower_components/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
