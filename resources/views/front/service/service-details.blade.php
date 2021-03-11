@@ -1,5 +1,5 @@
 @extends('front.layout.main')
-    <title>Clean Lub{{(count($product->availableLanguage) > 0) ? ' - '.$product->availableLanguage[0]->title : ''}}</title>
+    <title>Clean Lab{{(count($product->availableLanguage) > 0) ? ' - '.$product->availableLanguage[0]->title : ''}}</title>
 @section('content')
     <main>
         <!-- section 1 - main -->
